@@ -6,7 +6,7 @@ const Loginform = () => {
     <div>
       <div className='main-section'>
         <div className="side-pic">
-      
+
         </div>
         <div className="form-section">
 
