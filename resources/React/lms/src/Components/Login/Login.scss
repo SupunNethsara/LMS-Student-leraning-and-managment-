@@ -1,0 +1,34 @@
+
+.input-feild{
+@apply shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5
+}
+.password-area{
+  @apply  shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5
+}
+
+.main-section{
+    width: 100%;
+    height: 100%;
+    display: flex;
+
+    .side-pic{
+        width: 50%;
+        height: 100vh;
+        position: relative;
+    
+        background: #0E69F1;
+        clip-path: polygon(0 0, 100% 0, 70% 100%, 0 100%); 
+     
+    }
+    .form-section{
+        width: 50%;
+        height: auto;
+
+    .login-form{
+        margin-top: 30%;
+    }
+    
+    }
+   
+}
+
