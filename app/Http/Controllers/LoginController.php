@@ -24,7 +24,7 @@ class LoginController extends Controller
 
     return response()->json(['message' => 'User created successfully'], 201);
 
-    //  Account::create([
+     //  Account::create([
     //         'email' => $validatedData['email'],
     //         'password' => bcrypt($validatedData['password']), 
     //     ]);

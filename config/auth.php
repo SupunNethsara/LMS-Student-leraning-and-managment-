@@ -38,15 +38,11 @@ return [
     'guards' => [
         'web' => [
             'driver' => 'session',
-            'provider' => 'accounts', // Change from 'users' to 'accounts'
+            'provider' => 'accounts', // Correctly points to your custom provider
         ],
     ],
-    'providers' => [
-        'accounts' => [
-            'driver' => 'eloquent',
-            'model' => App\Models\Account::class, // Link your custom model
-        ],
-    ],
+
+
     /*
     |--------------------------------------------------------------------------
     | User Providers
@@ -64,17 +60,18 @@ return [
     |
     */
 
-    'providers' => [
-        'users' => [
-            'driver' => 'eloquent',
-            'model' => env('AUTH_MODEL', App\Models\User::class),
-        ],
-
-        'accounts' => [
-            'driver' => 'eloquent',
-            'model' => App\Models\Account::class, // Your Custom Model
-        ],
+   'providers' => [
+    'accounts' => [
+        'driver' => 'eloquent',
+        'model' => App\Models\Account::class, // Your custom Account model
     ],
+],
+
+        // 'users' => [
+        //     'driver' => 'database',
+        //     'table' => 'users',
+        // ],
+    
 
     /*
     |--------------------------------------------------------------------------
@@ -95,14 +92,14 @@ return [
     |
     */
 
-    'passwords' => [
-        'accounts' => [
-            'provider' => 'accounts',
-            'table' => env('AUTH_PASSWORD_RESET_TOKEN_TABLE', 'password_reset_tokens'),
-            'expire' => 60,
-            'throttle' => 60,
-        ],
+'passwords' => [
+    'accounts' => [
+        'provider' => 'accounts', // Use the 'accounts' provider here as well
+        'table' => env('AUTH_PASSWORD_RESET_TOKEN_TABLE', 'password_reset_tokens'),
+        'expire' => 60,
+        'throttle' => 60,
     ],
+],
 
     /*
     |--------------------------------------------------------------------------
