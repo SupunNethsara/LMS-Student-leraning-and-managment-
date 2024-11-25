@@ -6,6 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Account extends Model
 {
-    protected $table ='posts';
+    protected $table ='post';
     protected $fillable = ['email' , 'password'];
 }
