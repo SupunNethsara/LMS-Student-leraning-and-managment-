@@ -3,9 +3,9 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-
-class Account extends Model
+use Illuminate\Foundation\Auth\User as Authenticatable;
+class Account extends Authenticatable
 {
-    protected $table ='posts';
+    protected $table ='post';
     protected $fillable = ['email' , 'password'];
 }

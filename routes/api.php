@@ -1,8 +1,7 @@
 <?php
 
-use Illuminate\Http\Request;
+use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\LoginController;
-
 Route::post('/login', [LoginController::class, 'login']);
+Route::post('/signup', [LoginController::class, 'signup']);
