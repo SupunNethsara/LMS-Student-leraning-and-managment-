@@ -23,7 +23,7 @@ function Admindashboard() {
   };
   return (
     <div>
-       <form onSubmit={handleSubmit} className="login-form max-w-sm mx-auto mt-10">
+       {/* <form onSubmit={handleSubmit} className="login-form max-w-sm mx-auto mt-10">
             <div className=' m-5 '>
               <h2 style={{ color: '#483C3C' }} className='text-center font-bold text-2xl uppercase '>Welcome to UCSC </h2>
               <p style={{ color: '#827A7A' }} className="text-center">Online Learning Platform</p>
@@ -48,7 +48,9 @@ function Admindashboard() {
               type="submit"
               className="mb-10 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-8 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-64">Sign up
             </button>
-          </form>
+          </form> */}
+
+          
     </div>
   )
 }
