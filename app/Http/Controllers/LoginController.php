@@ -16,47 +16,47 @@ class LoginController extends Controller
             'password' => 'required',
         ]);
 
- Account::create([
-        'email' => $validatedData['email'],
-        'password' => bcrypt($validatedData['password']),
-        'role' => $request->input('role', 'user'), 
-    ]);
+        Account::create([
+            'email' => $validatedData['email'],
+            'password' => bcrypt($validatedData['password']),
+            'role' => $request->input('role', 'user'),
+        ]);
 
-    return response()->json(['message' => 'User created successfully'], 201);
+        return response()->json(['message' => 'User created successfully'], 201);
 
-     //  Account::create([
-    //         'email' => $validatedData['email'],
-    //         'password' => bcrypt($validatedData['password']), 
-    //     ]);
-        
-    //     return response()->json(['message' => 'User logged in successfully']);
+        //  Account::create([
+        //         'email' => $validatedData['email'],
+        //         'password' => bcrypt($validatedData['password']), 
+        //     ]);
+
+        //     return response()->json(['message' => 'User logged in successfully']);
     }
-    
+
     public function login(Request $request)
     {
-      $validatedData = $request->validate([
+        $validatedData = $request->validate([
             'email' => 'required|email',
             'password' => 'required',
         ]);
 
-     if (Auth::attempt(['email' => $validatedData['email'], 'password' => $validatedData['password']])) {
-        $user = Auth::user();
-        return response()->json([
-            'message' => 'Login successful',
-            'role' => $user->role, 
-        ], 200);
- 
-    } else {
-        return response()->json(['message' => 'Invalid credentials'], 401);
-    }
-      // if (Auth::attempt(['email' => $validatedData['email'], 'password' => $validatedData['password']])) {
+        if (Auth::attempt(['email' => $validatedData['email'], 'password' => $validatedData['password']])) {
+            $user = Auth::user();
+            return response()->json([
+                'message' => 'Login successful',
+                'role' => $user->role,
+            ], 200);
+        } else {
+            return response()->json(['message' => 'Invalid credentials'], 401);
+        }
+        // if (Auth::attempt(['email' => $validatedData['email'], 'password' => $validatedData['password']])) {
         //     // Authentication successful
         //     return response()->json(['message' => 'Login successful'], 200);
         // } 
-       
+
         // else {
-          
+
         //     return response()->json(['message' => 'Invalid credentials'], 401);
         // }
     }
+ 
 }
