@@ -13,26 +13,6 @@ const Loginform = () => {
   const navigate = useNavigate();
  
 
-
- 
-//   const handleSubmit = async (e) => {
-//     e.preventDefault();
-//   try {
-//       const response = await axios.post('http://localhost:8000/api/login', {
-//         email,
-//         password,
-        
-//       });
-       
-//    if (response.status === 200) {
-     
-//         navigate('/dashboard');
-//       }
-//     } catch (error) {
-//       console.error('Login failed:', error.response ? error.response.data : error.message);
-//     }
-// };
-
 const handleSubmit = async (e) => {
   e.preventDefault();
   try {
