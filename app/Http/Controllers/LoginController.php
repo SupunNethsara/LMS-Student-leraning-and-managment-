@@ -59,4 +59,10 @@ class LoginController extends Controller
         // }
     }
  
+    public function Calculatecount()
+    {
+        $users = Account::count();
+        return response()->json(['count'=> $users]);
+
+    }
 }

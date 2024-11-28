@@ -1,0 +1,109 @@
+//Statics-section
+*{
+    font-family: "Poppins", serif;
+}
+
+.boxes{
+	width: 100%;
+	height: auto;
+}
+
+
+
+.box-info {
+    display: flex;
+    width: 100%; 
+    justify-content: space-between;
+    grid-gap: 10px;
+    margin-top: 36px;
+}
+
+.box-info li {
+    padding: 24px;
+    background: #f5f6f8;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    grid-gap: 24px;
+    width: 100%;
+    margin:10px;
+    flex: 1; 
+}
+
+/* Style for the icons */
+.box-info li .bx {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    font-size: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box-info li:nth-child(1) .bx,
+.box-info li:nth-child(2) .bx,
+.box-info li:nth-child(3) .bx {
+    background: #CFE8FF;
+    color: #3C91E6;
+}
+
+/* Text styles */
+.box-info li .text h3 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #342E37;
+}
+
+.box-info li .text p {
+    color: #342E37;
+}
+
+//Registration-section
+
+.register-main{
+    width: 100%;
+    height: auto; 
+    display: block;
+
+
+    .upsection{
+        width: 100%;
+        display: flex;
+        justify-content: space-between; 
+        align-items: center; 
+     
+
+        form{
+            width: 100%; 
+            display: flex; 
+           justify-content: space-between; 
+            gap: 10px;
+
+            .items{
+                flex: 1;
+               
+            }
+        }
+    }
+    .downsection{
+        width: 100%;
+        display: flex;
+        justify-content: space-between; 
+        align-items: center; 
+     
+
+        form{
+            width: 100%; 
+            display: flex; 
+           justify-content: space-between; 
+            gap: 10px;
+
+            .items{
+                flex: 1;
+               
+            }
+        }
+    }
+   
+}

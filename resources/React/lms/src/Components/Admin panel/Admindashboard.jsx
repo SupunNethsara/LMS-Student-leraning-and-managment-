@@ -1,56 +1,121 @@
 
-import React ,{useState} from 'react'
+import React, { useState } from 'react'
+import { NavLink, Outlet, Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import Searchinglogo from './Component/Searchinglogo';
+import IconButton from '@mui/material/IconButton';
+import Badge from '@mui/material/Badge';
+import MailIcon from '@mui/icons-material/Mail';
+import NotificationsIcon from '@mui/icons-material/Notifications';
+import AdminProfileavtar from './Component/Profileavtar';
+import ListItemButton from '@mui/material/ListItemButton';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import DashboardIcon from '@mui/icons-material/Dashboard';
+import ListItemText from '@mui/material/ListItemText';
+import AdminNestedList from './Component/AdminNestedList';
+import FiberDvrIcon from '@mui/icons-material/FiberDvr';
+import ExitToAppIcon from '@mui/icons-material/ExitToApp';
+import HowToRegIcon from '@mui/icons-material/HowToReg';
+import AdminNestedliststudent from './Component/AdminNestedliststudent';
 function Admindashboard() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
 
   const handleSubmit = async (e) => {
-      e.preventDefault();
-   
-      try {
-          const response = await axios.post('http://localhost:8000/api/signup', {
-              email,
-              password,
-          });
-          console.log('Response:', response.data);
-      } catch (error) {
-          console.error('Error:', error.response ? error.response.data : error.message);
-      }
-  
-  //  
+    e.preventDefault();
+
+    try {
+      const response = await axios.post('http://localhost:8000/api/signup', {
+        email,
+        password,
+      });
+      console.log('Response:', response.data);
+    } catch (error) {
+      console.error('Error:', error.response ? error.response.data : error.message);
+    }
+
+    //  
   };
   return (
     <div>
-       {/* <form onSubmit={handleSubmit} className="login-form max-w-sm mx-auto mt-10">
-            <div className=' m-5 '>
-              <h2 style={{ color: '#483C3C' }} className='text-center font-bold text-2xl uppercase '>Welcome to UCSC </h2>
-              <p style={{ color: '#827A7A' }} className="text-center">Online Learning Platform</p>
 
-            </div>
-            <div className="mb-2">
-              <label for="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your email</label>
-              <input type="email" id="email" value={email}  onChange={(e) => setEmail(e.target.value)} className="input-field" placeholder='user name'   />
-            </div>
-            <div className="mb-5">
-              <label for="password" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your password</label>
-              <input type="password" id="password" value={password}  onChange={(e) => setPassword(e.target.value)} className="password-area" placeholder='Password' />
-            </div>
+      <nav style={{ background: '#ffffff', position: "sticky" }} class="fixed top-0 z-50 w-full border-b ">
+        <div style={{ padding: '5px' }} class="px-2  lg:px-5 lg:pl-1">
+          <div class="flex items-center justify-between">
+            <Searchinglogo />
+            <div class="flex items-center">
 
-            <div className="flex items-start mb-5">
-              <div classname="flex items-center h-5">
-                <input id="terms" type="checkbox" value="" className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800" required />
+              <div style={{ marginRight: '10px' }} class="flex items-center ms-3">
+
+                <IconButton size="large" aria-label="show 4 new mails" style={{ color: "black" }}>
+                  <Badge badgeContent={4} color="error">
+                    <MailIcon />
+                  </Badge>
+                </IconButton>
+
+                <IconButton size="large" aria-label="show 17 new notifications" style={{ color: "black" }}>
+                  <Badge badgeContent={17} color="error">
+                    <NotificationsIcon />
+                  </Badge>
+                </IconButton>
+                <AdminProfileavtar />
+
               </div>
-              <label for="terms" className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">I agree with the <a href="#" className="text-blue-600 hover:underline dark:text-blue-500">terms and conditions</a></label>
             </div>
-            <button style={{ width: '100%', borderRadius: '50px' }}
-              type="submit"
-              className="mb-10 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-8 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-64">Sign up
-            </button>
-          </form> */}
+          </div>
+        </div>
+      </nav >
+      <aside style={{ backgroundColor: '#f7f9fa' }} id="logo-sidebar" class="fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform -translate-x-full sm:translate-x-0 " aria-label="Sidebar">
+        <div style={{ backgroundColor: '#f7f9fa' }} class=" h-full px-2 pb-4 overflow-y-auto bg-white mt-0 ">
 
-          
+          <ul style={{ fontSize: '14px' }} class="navlink  font-medium">
+            <Link to="/adminpanel/dashboard">
+              <ListItemButton> <ListItemIcon>< DashboardIcon /></ListItemIcon>
+                <ListItemText primary="Dashboard" />
+              </ListItemButton>
+            </Link>
+
+            <Link to="registration">
+              <ListItemButton sx={{marginTop:'10px'}} >
+                <ListItemIcon>
+                  <HowToRegIcon/>
+                </ListItemIcon>
+                <ListItemText primary="Student Registration" />
+              </ListItemButton>
+            </Link>
+            <AdminNestedList />
+            <AdminNestedliststudent />
+
+
+            <Link to="#">
+              <ListItemButton >
+                <ListItemIcon>
+                  <FiberDvrIcon />
+                </ListItemIcon>
+                <ListItemText primary="Recording Uploded" />
+              </ListItemButton>
+            </Link>
+
+            <ListItemButton >
+              <ListItemIcon>
+                <ExitToAppIcon />
+              </ListItemIcon>
+              <ListItemText primary="Sign Out" />
+            </ListItemButton>
+
+          </ul>
+        </div>
+      </aside>
+
+      <div style={{ height: 'auto', backgroundColor: '#ededed' }} class="sm:ml-64">
+        <div class="p-4 mt-auto ">
+          <div style={{ backgroundColor: '#ffffff', height: '100vh', borderRadius: '10px' }} class="grid grid-cols-1 gap-4 mb-4">
+            <Outlet />
+          </div>
+        </div>
+      </div>
+
     </div>
   )
 }

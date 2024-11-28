@@ -1,16 +1,16 @@
 import * as React from 'react';
-import { NavLink, Outlet, Link, useNavigate } from 'react-router-dom';
+
 import List from '@mui/material/List';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import Collapse from '@mui/material/Collapse';
-import AssignmentIcon from '@mui/icons-material/Assignment';
+import SchoolIcon from '@mui/icons-material/School';
+
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
 import TaskAltIcon from '@mui/icons-material/TaskAlt';
-
-export default function NestedList() {
+export default function AdminNestedliststudent() {
   const [open, setOpen] = React.useState(false);
 
   const handleClick = () => {
@@ -19,7 +19,7 @@ export default function NestedList() {
 
   return (
     <List
-      sx={{ width: '100%'}}
+      sx={{ width: '100%', maxWidth: 360, }}
       component="nav"
       aria-labelledby="nested-list-subheader"
  
@@ -28,23 +28,24 @@ export default function NestedList() {
  
       <ListItemButton onClick={handleClick}>
         <ListItemIcon>
-          <AssignmentIcon />
+          <SchoolIcon />
         </ListItemIcon>
-        <ListItemText primary="Task Manager" />
+        <ListItemText primary="Class Activity" />
         {open ? <ExpandLess /> : <ExpandMore />}
       </ListItemButton>
-      <Link to='taskboard'>
+     
       <Collapse in={open} timeout="auto" unmountOnExit>
         <List component="div" disablePadding>
           <ListItemButton sx={{ pl: 4 }}>
             <ListItemIcon>
-              < TaskAltIcon/>
+              <TaskAltIcon  />
             </ListItemIcon>
-            <ListItemText primary="Task" />
+            <ListItemText primary="Assigment" />
           </ListItemButton>
         </List>
       </Collapse>
-      </Link>
+      
+   
     </List>
   );
 }

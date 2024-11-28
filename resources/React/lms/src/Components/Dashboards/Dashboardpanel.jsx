@@ -11,10 +11,11 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import DashboardIcon from '@mui/icons-material/Dashboard';
 import ListItemText from '@mui/material/ListItemText';
-import Profileavtar from './Profileavtar';
+
 import NestedList from './Components/NestedList';
 import Nestedliststudent from './Components/Nestedliststudent';
 import Searchinglogo from './Components/Searchinglogo';
+import Profileavtar from './Components/Profileavtar';
 
 
 function Dashboardpanel() {
@@ -42,7 +43,7 @@ function Dashboardpanel() {
                     <NotificationsIcon />
                   </Badge>
                 </IconButton>
-                <Profileavtar />
+               <Profileavtar/>
 
               </div>
             </div>
