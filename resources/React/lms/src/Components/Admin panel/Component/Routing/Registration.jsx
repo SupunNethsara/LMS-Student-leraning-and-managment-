@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import '../Routing/Adminpanel.scss';
 import axios from 'axios';
+import PasswordInput from '../PasswordInput';
 function Registration() {
     //     const [email, setEmail] = useState('');
     // const [password, setPassword] = useState('');
@@ -66,10 +67,11 @@ function Registration() {
                             <label for="text" class="block mb-2 text-sm font-medium text-gray-900">Add email</label>
                             <input type="text" id="email" value={email} onChange={(e) => setEmail(e.target.value)} class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="Smith" required />
                         </div>
-                        <div class="items m-5">
+                        {/* <div class="items m-5">
                             <label for="password" class="block mb-2 text-sm font-medium text-gray-900">Password</label>
                             <input type="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="Frenando" required />
-                        </div>
+                        </div> */}
+                        <PasswordInput/>
                         <div class=" items m-5">
                             <label for="text" class="block mb-2 text-sm font-medium text-gray-900">Selected Corces</label>
                             <input type="text" id="corce" value={corce} onChange={(e) => setCorce(e.target.value)} class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="Frenando" required />

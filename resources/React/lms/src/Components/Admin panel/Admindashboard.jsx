@@ -17,6 +17,7 @@ import FiberDvrIcon from '@mui/icons-material/FiberDvr';
 import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 import HowToRegIcon from '@mui/icons-material/HowToReg';
 import AdminNestedliststudent from './Component/AdminNestedliststudent';
+import AdminNestedlistregister from './Component/AdminNestedlistregister';
 function Admindashboard() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -76,14 +77,9 @@ function Admindashboard() {
               </ListItemButton>
             </Link>
 
-            <Link to="registration">
-              <ListItemButton sx={{marginTop:'10px'}} >
-                <ListItemIcon>
-                  <HowToRegIcon/>
-                </ListItemIcon>
-                <ListItemText primary="Student Registration" />
-              </ListItemButton>
-            </Link>
+         
+             <AdminNestedlistregister/>
+            
             <AdminNestedList />
             <AdminNestedliststudent />
 

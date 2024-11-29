@@ -16,7 +16,7 @@ function Profile() {
     <div className="profile">
     {profile ? (
         <div>
-            <h2>{profile.fname} {profile.lname}</h2>
+            <h2>{profile.fname} {profile.mname} {profile.lname}</h2>
             <p>Email: {profile.email}</p>
             <p>Course: {profile.corce}</p>
             <p>Gender: {profile.gender}</p>

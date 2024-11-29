@@ -11,6 +11,7 @@ import Recordings from './Components/Dashboards/Components/Recordings';
 import Statics from './Components/Admin panel/Component/Routing/Statics';
 import Registration from './Components/Admin panel/Component/Routing/Registration';
 import Profile from './Components/Dashboards/Components/RoutingDash/Profile';
+import EmailRegister from './Components/Admin panel/Component/Routing/EmailRegister';
 
 
 
@@ -27,6 +28,7 @@ function App() {
             <Route index element={<Statics />} />
             <Route path="dashboard" element={<Statics />} />
             <Route path="registration" element={<Registration />} />
+            <Route path="emails" element={<EmailRegister />} />
           </Route>
           <Route path='/dashboard' element={<Dashboardpanel />}>
             <Route index element={<Dashboard_content />} />
