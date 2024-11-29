@@ -6,7 +6,7 @@ use App\Models\Account;
 use App\Models\StudentRegister;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-
+use Symfony\Component\HttpFoundation\Request as HttpFoundationRequest;
 
 class LoginController extends Controller
 {
@@ -71,9 +71,13 @@ class LoginController extends Controller
 
         if (Auth::attempt(['email' => $validatedData['email'], 'password' => $validatedData['password']])) {
             $user = Auth::user();
+
+            $userProfile = StudentRegister::where('email', $user->email)->first();
+
             return response()->json([
                 'message' => 'Login successful',
                 'role' => $user->role,
+                'profile' => $userProfile,
             ], 200);
         } else {
             return response()->json(['message' => 'Invalid credentials'], 401);
@@ -81,10 +85,14 @@ class LoginController extends Controller
        
     }
  
+    
     public function Calculatecount()
     {
         $users = Account::count();
         return response()->json(['count'=> $users]);
 
     }
+
+
+    
 }

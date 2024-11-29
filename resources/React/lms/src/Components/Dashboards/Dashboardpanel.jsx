@@ -43,7 +43,12 @@ function Dashboardpanel() {
                     <NotificationsIcon />
                   </Badge>
                 </IconButton>
-               <Profileavtar/>
+                <Link to="profile">
+                <Profileavtar/>
+                </Link>
+               
+               
+            
 
               </div>
             </div>

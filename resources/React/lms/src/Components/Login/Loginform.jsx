@@ -9,30 +9,34 @@ import { useNavigate } from 'react-router-dom';
 const Loginform = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
- 
+
   const navigate = useNavigate();
- 
 
-const handleSubmit = async (e) => {
-  e.preventDefault();
-  try {
-    const response = await axios.post('http://localhost:8000/api/login', {
-      email,
-      password,
-    });
 
-    if (response.status === 200) {
-      const userRole = response.data.role; 
-      if (userRole === 'admin') {
-        navigate('/adminpanel');
-      } else {
-        navigate('/dashboard');
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const response = await axios.post('http://localhost:8000/api/login', {
+        email,
+        password,
+      });
+
+      if (response.status === 200) {
+        const userRole = response.data.role;
+        const userProfile = response.data.profile;
+
+        localStorage.setItem('userProfile', JSON.stringify(userProfile));
+
+        if (userRole === 'admin') {
+          navigate('/adminpanel');
+        } else {
+          navigate('/dashboard');
+        }
       }
+    } catch (error) {
+      console.error('Login failed:', error.response ? error.response.data : error.message);
     }
-  } catch (error) {
-    console.error('Login failed:', error.response ? error.response.data : error.message);
-  }
-};
+  };
 
   return (
     //main-class
@@ -52,11 +56,11 @@ const handleSubmit = async (e) => {
             </div>
             <div className="mb-2">
               <label for="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your email</label>
-              <input type="email" id="email" value={email}  onChange={(e) => setEmail(e.target.value)} className="input-field" placeholder='user name' required  />
+              <input type="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} className="input-field" placeholder='user name' required />
             </div>
             <div className="mb-5">
               <label for="password" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your password</label>
-              <input type="password" id="password" value={password}  onChange={(e) => setPassword(e.target.value)} className="password-area" placeholder='Password' required />
+              <input type="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} className="password-area" placeholder='Password' required />
             </div>
 
             <div className="flex items-start mb-5">
@@ -65,7 +69,7 @@ const handleSubmit = async (e) => {
               </div>
               <label for="terms" className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">I agree with the <a href="#" className="text-blue-600 hover:underline dark:text-blue-500">terms and conditions</a></label>
             </div>
-            <button   style={{ width: '100%', borderRadius: '50px' }}
+            <button style={{ width: '100%', borderRadius: '50px' }}
               type="submit"
               className="mb-10 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-8 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-64">Login
             </button>
