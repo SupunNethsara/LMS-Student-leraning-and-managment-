@@ -15,7 +15,10 @@ class StudentRegister extends Authenticatable
         'password',
         'corce',
         'gender',
+        'contact',
         'qulification',
+        'role',
+        'adress',
         'profile',
     ];
 }

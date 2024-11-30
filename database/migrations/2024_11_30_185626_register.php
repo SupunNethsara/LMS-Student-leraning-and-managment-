@@ -20,7 +20,10 @@ return new class extends Migration
             $table->string('password');
             $table->string('corce');
             $table->string('gender');
+            $table->integer('contact');
             $table->string('qulification');
+            $table->string('role');
+            $table->string('adress');
             $table->string('profile')->nullable();;
             $table->timestamps();
         });

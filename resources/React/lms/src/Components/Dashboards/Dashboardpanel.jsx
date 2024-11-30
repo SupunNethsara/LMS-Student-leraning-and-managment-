@@ -15,7 +15,8 @@ import ListItemText from '@mui/material/ListItemText';
 import NestedList from './Components/NestedList';
 import Nestedliststudent from './Components/Nestedliststudent';
 import Searchinglogo from './Components/Searchinglogo';
-import Profileavtar from './Components/Profileavtar';
+import Profile from './Components/RoutingDash/Profile';
+
 
 
 function Dashboardpanel() {
@@ -24,13 +25,13 @@ function Dashboardpanel() {
     <>
 
 
-      <nav style={{ background: '#ffffff', position: "sticky" }} class="fixed top-0 z-50 w-full border-b ">
-        <div style={{ padding: '5px' }} class="px-2  lg:px-5 lg:pl-1">
-          <div class="flex items-center justify-between">
+      <nav style={{ background: '#ffffff', position: "sticky" }} className="fixed top-0 z-50 w-full border-b ">
+        <div style={{ padding: '5px' }} className="px-2  lg:px-5 lg:pl-1">
+          <div className="flex items-center justify-between">
             <Searchinglogo />
-            <div class="flex items-center">
+            <div className="flex items-center">
 
-              <div style={{ marginRight: '10px' }} class="flex items-center ms-3">
+              <div style={{ marginRight: '10px' }} className="flex items-center ms-3">
 
                 <IconButton size="large" aria-label="show 4 new mails" style={{ color: "black" }}>
                   <Badge badgeContent={4} color="error">
@@ -43,12 +44,18 @@ function Dashboardpanel() {
                     <NotificationsIcon />
                   </Badge>
                 </IconButton>
-                <Link to="profile">
-                <Profileavtar/>
-                </Link>
+           
+                  <div className="relative m-1" data-drawer-target="drawer-right-example" data-drawer-show="drawer-right-example" data-drawer-placement="right" aria-controls="drawer-right-example">
+                    <img
+                      className="w-10 h-10 rounded-full"
+                      src="1.jpg"
+                      alt="Profile"
+                    />
+                    <span className="top-0 left-7 absolute w-3.5 h-3.5 bg-green-400 border-2 border-white dark:border-gray-800 rounded-full"></span>
+                  </div>
                
-               
-            
+              <Profile/>
+                
 
               </div>
             </div>
@@ -56,9 +63,9 @@ function Dashboardpanel() {
         </div>
       </nav >
 
-      <aside style={{ backgroundColor: '#f7f9fa' }} id="logo-sidebar" class="fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform -translate-x-full sm:translate-x-0 " aria-label="Sidebar">
-        <div style={{ backgroundColor: '#f7f9fa' }} class=" h-full px-2 pb-4 overflow-y-auto bg-white mt-0 ">
-          <ul style={{ fontSize: '14px' }} class="navlink space-y-6 font-medium">
+      <aside style={{ backgroundColor: '#f7f9fa' }} id="logo-sidebar" className="fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform -translate-x-full sm:translate-x-0 " aria-label="Sidebar">
+        <div style={{ backgroundColor: '#f7f9fa' }} className=" h-full px-2 pb-4 overflow-y-auto bg-white mt-0 ">
+          <ul style={{ fontSize: '14px' }} className="navlink space-y-6 font-medium">
             <Link to="/dashboard">
               <ListItemButton> <ListItemIcon>< DashboardIcon /></ListItemIcon>
                 <ListItemText primary="Dashboard" />
@@ -76,7 +83,7 @@ function Dashboardpanel() {
                 <ListItemIcon>
                   <FiberDvrIcon />
                 </ListItemIcon>
-                <ListItemText  primary="Session Recordings" />
+                <ListItemText primary="Session Recordings" />
               </ListItemButton>
             </Link>
 
@@ -91,9 +98,9 @@ function Dashboardpanel() {
         </div>
       </aside>
 
-      <div style={{ height: 'auto', backgroundColor: '#f2f6fc' }} class="sm:ml-64">
-        <div class="p-4 mt-auto">
-          <div style={{ backgroundColor: '#ffffff', height: '100vh', borderRadius: '10px' }} class="grid grid-cols-3 gap-4 mb-4">
+      <div style={{ height: 'auto', backgroundColor: '#f2f6fc' }} className="sm:ml-64">
+        <div className="p-4 mt-auto">
+          <div style={{ backgroundColor: '#ffffff', height: '100vh', borderRadius: '10px' }} className="grid grid-cols- gap-4 mb-4">
             <Outlet />
           </div>
         </div>

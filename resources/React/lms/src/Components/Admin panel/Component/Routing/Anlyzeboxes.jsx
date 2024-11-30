@@ -21,24 +21,24 @@ function Anlyzeboxes() {
     }, [])
     return (
         <div className='Boxes'>
-            <ul class="box-info">
+            <ul  className="box-info">
                 <li>
-                    <i class='bx bxs-group' ></i>
-                    <span class="text">
+                    <i  className='bx bxs-group' ></i>
+                    <span  className="text">
                         <h3>{studentCount}</h3>
                         <p>Student</p>
                     </span>
                 </li>
                 <li>
-                    <i class='bx bxs-calendar-check' ></i>
-                    <span class="text">
+                    <i  className='bx bxs-calendar-check' ></i>
+                    <span className="text">
                         <h3>0</h3>
                         <p>Task</p>
                     </span>
                 </li>
                 <li>
-                    <i class='bx bxs-calendar-check' ></i>
-                    <span class="text">
+                    <i  className='bx bxs-calendar-check' ></i>
+                    <span  className="text">
                         <h3>0</h3>
                         <p>Online</p>
                     </span>

@@ -41,13 +41,13 @@ function Admindashboard() {
   return (
     <div>
 
-      <nav style={{ background: '#ffffff', position: "sticky" }} class="fixed top-0 z-50 w-full border-b ">
-        <div style={{ padding: '5px' }} class="px-2  lg:px-5 lg:pl-1">
-          <div class="flex items-center justify-between">
+      <nav style={{ background: '#ffffff', position: "sticky" }}  className="fixed top-0 z-50 w-full border-b ">
+        <div style={{ padding: '5px' }}  className="px-2  lg:px-5 lg:pl-1">
+          <div  className="flex items-center justify-between">
             <Searchinglogo />
-            <div class="flex items-center">
+            <div  className="flex items-center">
 
-              <div style={{ marginRight: '10px' }} class="flex items-center ms-3">
+              <div style={{ marginRight: '10px' }}  className="flex items-center ms-3">
 
                 <IconButton size="large" aria-label="show 4 new mails" style={{ color: "black" }}>
                   <Badge badgeContent={4} color="error">
@@ -67,10 +67,10 @@ function Admindashboard() {
           </div>
         </div>
       </nav >
-      <aside style={{ backgroundColor: '#f7f9fa' }} id="logo-sidebar" class="fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform -translate-x-full sm:translate-x-0 " aria-label="Sidebar">
-        <div style={{ backgroundColor: '#f7f9fa' }} class=" h-full px-2 pb-4 overflow-y-auto bg-white mt-0 ">
+      <aside style={{ backgroundColor: '#f7f9fa' }} id="logo-sidebar"  className="fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform -translate-x-full sm:translate-x-0 " aria-label="Sidebar">
+        <div style={{ backgroundColor: '#f7f9fa' }}  className=" h-full px-2 pb-4 overflow-y-auto bg-white mt-0 ">
 
-          <ul style={{ fontSize: '14px' }} class="navlink  font-medium">
+          <ul style={{ fontSize: '14px' }}  className="navlink  font-medium">
             <Link to="/adminpanel/dashboard">
               <ListItemButton> <ListItemIcon>< DashboardIcon /></ListItemIcon>
                 <ListItemText primary="Dashboard" />
@@ -104,9 +104,9 @@ function Admindashboard() {
         </div>
       </aside>
 
-      <div style={{ height: 'auto', backgroundColor: '#ededed' }} class="sm:ml-64">
-        <div class="p-4 mt-auto ">
-          <div style={{ backgroundColor: '#ffffff', height: '100vh', borderRadius: '10px' }} class="grid grid-cols-1 gap-4 mb-4">
+      <div style={{ height: 'auto', backgroundColor: '#ededed' }}  className="sm:ml-64">
+        <div  className="p-4 mt-auto ">
+          <div style={{ backgroundColor: '#ffffff', height: '100vh', borderRadius: '10px' }} className="grid grid-cols-1 gap-4 mb-4">
             <Outlet />
           </div>
         </div>

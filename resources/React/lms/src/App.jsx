@@ -10,7 +10,7 @@ import Dashboard_content from './Components/Dashboards/Components/Dashboard_cont
 import Recordings from './Components/Dashboards/Components/Recordings';
 import Statics from './Components/Admin panel/Component/Routing/Statics';
 import Registration from './Components/Admin panel/Component/Routing/Registration';
-import Profile from './Components/Dashboards/Components/RoutingDash/Profile';
+
 import EmailRegister from './Components/Admin panel/Component/Routing/EmailRegister';
 
 
@@ -35,7 +35,7 @@ function App() {
             <Route path="student" element={<Student_activity />} />
             <Route path="taskboard" element={<Taskboard />} />
             <Route path="recording" element={<Recordings />} />
-            <Route path="profile" element={<Profile />} />
+           
           </Route>
         </Routes>
       </BrowserRouter>

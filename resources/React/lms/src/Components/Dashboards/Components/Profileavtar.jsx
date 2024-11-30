@@ -32,11 +32,11 @@ function Profileavtar() {
   };
 
   return (
- 
+  
        
           <Box sx={{ flexGrow: 0 , marginLeft:"10px"}}>
             <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+              <IconButton  onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                 <Avatar alt="Remy Sharp" src="1.jpg" />
               </IconButton>
             </Tooltip>

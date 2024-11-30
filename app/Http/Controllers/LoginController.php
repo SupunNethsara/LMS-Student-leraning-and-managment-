@@ -37,7 +37,10 @@ class LoginController extends Controller
             'password' => 'required|',
             'corce' => 'nullable|',
             'gender' => 'required|',
+            'contact' => 'nullable|',
             'qulification' => 'nullable|',
+            'role' => 'nullable|',
+            'adress' => 'nullable|',
             'profile' => 'nullable|file|image|max:2048',
         ]);
         $profilePath = null;
@@ -52,7 +55,10 @@ class LoginController extends Controller
             'password' => bcrypt($validatedData['password']),
             'corce' => $validatedData['corce'],
             'gender' => $validatedData['gender'],
+            'contact' => $validatedData['contact'],
             'qulification' => $validatedData['qulification'],
+            'role' => $validatedData['role'],
+            'adress' => $validatedData['adress'],
             'profile' => $profilePath,
         ]);
 
