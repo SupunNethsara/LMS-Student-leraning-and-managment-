@@ -29,6 +29,24 @@
     margin:10px;
     flex: 1; 
 }
+.main{
+    width: 100%;
+    height: auto;
+    display: flex;
+
+    .left_sec{
+        width: 75%;
+        height: auto;
+    }
+    .right_sec{
+        width: 25%;
+        background: #eff1f3;
+        margin: 13px;
+        border-radius: 15px;
+       
+    }
+}
+
 
 /* Style for the icons */
 .box-info li .bx {

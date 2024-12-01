@@ -6,6 +6,7 @@ use App\Models\Account;
 use App\Models\StudentRegister;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cache;
 use Symfony\Component\HttpFoundation\Request as HttpFoundationRequest;
 
 class LoginController extends Controller
@@ -68,6 +69,13 @@ class LoginController extends Controller
     
     }
 
+    //getdata Register for Admin panel Table
+    public function getdataRegister(Request $request){
+        $registerdata = StudentRegister::all();
+        return response()->json(['userdetails'=> $registerdata]);
+    }
+
+
     public function login(Request $request)
     {
         $validatedData = $request->validate([
@@ -106,7 +114,8 @@ class LoginController extends Controller
         return response()->json(['count'=> $users]);
 
     }
-
+   
+    
 
     
 }

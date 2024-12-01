@@ -13,13 +13,18 @@
     "@emotion/react": "^11.13.5",
     "@emotion/styled": "^11.13.5",
     "@mui/icons-material": "^6.1.9",
-    "@mui/material": "^6.1.8",
+    "@mui/material": "^6.1.9",
+    "@mui/styled-engine-sc": "^6.1.9",
+    "@mui/x-date-pickers": "^7.23.0",
     "axios": "^1.7.7",
     "boxicons": "^2.1.4",
+    "dayjs": "^1.11.13",
     "flowbite": "^2.5.2",
     "react": "^18.3.1",
+    "react-datepicker": "^7.5.0",
     "react-dom": "^18.3.1",
-    "react-router-dom": "^7.0.1"
+    "react-router-dom": "^7.0.1",
+    "styled-components": "^6.1.13"
   },
   "devDependencies": {
     "@eslint/js": "^9.13.0",
