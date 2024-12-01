@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import axios from 'axios';
 import './Dashboard.scss'
 import Badge from '@mui/material/Badge';
 import MailIcon from '@mui/icons-material/Mail';
@@ -21,6 +22,19 @@ import Profile from './Components/RoutingDash/Profile';
 
 function Dashboardpanel() {
 
+  const handleLogout = async () => {
+    try {
+      const response = await axios.post('http://localhost:8000/api/logout');
+      alert(response.data.message); // Show success message
+      window.location.href = '/'; // Redirect to login page
+    } catch (error) {
+      console.error('Logout failed:', error.response?.data || error.message);
+      alert('Logout failed. Please try again.');
+    }
+  };;
+  
+  
+
   return (
     <>
 
@@ -31,7 +45,7 @@ function Dashboardpanel() {
             <Searchinglogo />
             <div className="flex items-center">
 
-              <div style={{ marginRight: '10px' }} className="flex items-center ms-3">
+              <div style={{}} className="flex items-center ms-3">
 
                 <IconButton size="large" aria-label="show 4 new mails" style={{ color: "black" }}>
                   <Badge badgeContent={4} color="error">
@@ -44,18 +58,18 @@ function Dashboardpanel() {
                     <NotificationsIcon />
                   </Badge>
                 </IconButton>
-           
-                  <div className="relative m-1" data-drawer-target="drawer-right-example" data-drawer-show="drawer-right-example" data-drawer-placement="right" aria-controls="drawer-right-example">
-                    <img
-                      className="w-10 h-10 rounded-full"
-                      src="1.jpg"
-                      alt="Profile"
-                    />
-                    <span className="top-0 left-7 absolute w-3.5 h-3.5 bg-green-400 border-2 border-white dark:border-gray-800 rounded-full"></span>
-                  </div>
-               
-              <Profile/>
-                
+
+                <div className="relative m-1" data-drawer-target="drawer-right-example" data-drawer-show="drawer-right-example" data-drawer-placement="right" aria-controls="drawer-right-example">
+                  <img
+                    className="w-10 h-10 rounded-full"
+                    src="1.jpg"
+                    alt="Profile"
+                  />
+                  <span className="top-0 left-7 absolute w-3.5 h-3.5 bg-green-400 border-2 border-white dark:border-gray-800 rounded-full"></span>
+                </div>
+
+                <Profile />
+
 
               </div>
             </div>
@@ -87,12 +101,12 @@ function Dashboardpanel() {
               </ListItemButton>
             </Link>
 
-            <ListItemButton >
-              <ListItemIcon>
-                <ExitToAppIcon />
-              </ListItemIcon>
-              <ListItemText primary="Sign Out" />
-            </ListItemButton>
+            <ListItemButton onClick={handleLogout}>
+      <ListItemIcon>
+        <ExitToAppIcon />
+      </ListItemIcon>
+      <ListItemText primary="Sign Out" />
+    </ListItemButton>
 
           </ul>
         </div>

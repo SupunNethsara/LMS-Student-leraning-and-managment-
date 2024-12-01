@@ -14,38 +14,91 @@ const Loginform = () => {
     setIsVisible(false);
   };
 
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   try {
+  //     const response = await axios.post('http://localhost:8000/api/login', {
+  //       email,
+  //       password,
+  //     });
+
+  //     if (response.status === 200) {
+  //       const userRole = response.data.role;
+  //       const userProfile = response.data.profile;
+
+  //       if (userProfile) {
+  //         localStorage.setItem('userProfile', JSON.stringify(userProfile));
+  //       } else {
+  //         console.warn('User profile is missing in response.');
+  //       }
+
+  //       if (userRole === 'admin') {
+  //         navigate('/adminpanel');
+  //       } else {
+  //         navigate('/dashboard');
+  //       }
+  //     }
+  //   } catch (error) {
+  //     if (error.response && error.response.status === 401) {
+  //       setErrorMessage('Invalid credentials. Please try again.');
+  //     } else {
+  //       setErrorMessage('An error occurred. Please try later.');
+  //     }
+  //   }
+  // };
+
+
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const response = await axios.post('http://localhost:8000/api/login', {
-        email,
-        password,
-      });
+  e.preventDefault();
 
-      if (response.status === 200) {
-        const userRole = response.data.role;
-        const userProfile = response.data.profile;
+  // Clear any previous error messages
+  setErrorMessage('');
 
-        if (userProfile) {
-          localStorage.setItem('userProfile', JSON.stringify(userProfile));
-        } else {
-          console.warn('User profile is missing in response.');
-        }
+  try {
+    // Send login request to backend
+    const response = await axios.post('http://localhost:8000/api/login', {
+      email,
+      password,
+    });
 
-        if (userRole === 'admin') {
-          navigate('/adminpanel');
-        } else {
-          navigate('/dashboard');
-        }
-      }
-    } catch (error) {
-      if (error.response && error.response.status === 401) {
-        setErrorMessage('Invalid credentials. Please try again.');
+    if (response.status === 200) {
+      const { role: userRole, profile: userProfile } = response.data;
+
+      // Store user profile and token in localStorage
+      if (userProfile) {
+        localStorage.setItem('userProfile', JSON.stringify(userProfile));
       } else {
-        setErrorMessage('An error occurred. Please try later.');
+        console.warn('User profile is missing in response.');
+      }
+
+      // Navigate to different panels based on user role
+      if (userRole === 'admin') {
+        navigate('/adminpanel');
+      } else if (userRole === 'user') {
+        navigate('/dashboard');
+      } else {
+        console.warn('Unknown user role:', userRole);
+        setErrorMessage('Unexpected user role. Please contact support.');
       }
     }
-  };
+  } catch (error) {
+    // Handle errors
+    if (error.response) {
+      if (error.response.status === 401) {
+        setErrorMessage('Invalid credentials. Please try again.');
+      } else {
+        setErrorMessage(
+          `Error ${error.response.status}: ${error.response.data.message || 'An error occurred.'}`
+        );
+      }
+    } else {
+      setErrorMessage('Unable to connect to the server. Please try later.');
+    }
+
+    console.error('Login error:', error);
+  }
+};
+
 
   return (
     <div>

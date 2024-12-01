@@ -23,21 +23,19 @@ function Admindashboard() {
   const [password, setPassword] = useState('');
 
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
+  const handleLogout = async () => {
     try {
-      const response = await axios.post('http://localhost:8000/api/signup', {
-        email,
-        password,
-      });
-      console.log('Response:', response.data);
+      const response = await axios.post('http://localhost:8000/api/logout');
+      alert(response.data.message); // Show success message
+      window.location.href = '/'; // Redirect to login page
     } catch (error) {
-      console.error('Error:', error.response ? error.response.data : error.message);
+      console.error('Logout failed:', error.response?.data || error.message);
+      alert('Logout failed. Please try again.');
     }
+  };;
+  
+ 
 
-    //  
-  };
   return (
     <div>
 
@@ -93,7 +91,7 @@ function Admindashboard() {
               </ListItemButton>
             </Link>
 
-            <ListItemButton >
+            <ListItemButton onClick={handleLogout} >
               <ListItemIcon>
                 <ExitToAppIcon />
               </ListItemIcon>

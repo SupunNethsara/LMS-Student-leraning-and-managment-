@@ -75,9 +75,27 @@ function Registration() {
                                 <input type="text" id="password" value={password} onChange={(e) => setPassword(e.target.value)} class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="Admin@345" required />
                             </div> 
                         {/* <PasswordInput onChange={(e) => setPassword(e.target.value)} /> */}
-                        <div  className=" items m-5">
-                            <label for="text"  className="block mb-2 text-sm font-medium text-gray-900">Selected Corces</label>
-                            <input type="text" id="corce" value={corce} onChange={(e) => setCorce(e.target.value)}  className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 " placeholder="Laravel and React" required />
+                        <div className="items m-5">
+                            <label
+                                htmlFor="gender"
+                                className="block mb-2 text-sm font-medium text-gray-900"
+                            >
+                                Selected Corces
+                            </label>
+                            <select
+                                id="corce"
+                                value={corce}
+                                onChange={(e) => setCorce(e.target.value)}
+                                className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                                required
+                            >
+                                <option value="" disabled>
+                                    Select your Corce
+                                </option>
+                                <option value="react">React Corce</option>
+                                <option value="laravel">Laravel Corce</option>
+                                <option value="full stack development">Full Stcak Devlopment </option>
+                            </select>
                         </div>
 
                     </div>

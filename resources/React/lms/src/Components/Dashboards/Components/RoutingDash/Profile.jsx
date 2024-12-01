@@ -6,7 +6,7 @@ import './Profile.scss'
 function Profile() {
 
   const [profile, setProfile] = useState(null);
-  const [loading, setLoading] = useState(true);
+  // const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const savedProfile = JSON.parse(localStorage.getItem('userProfile'));
