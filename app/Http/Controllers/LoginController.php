@@ -28,7 +28,7 @@ class LoginController extends Controller
         return response()->json(['message' => 'User created successfully'], 201);
     }
 
-    //All student data Registering
+    // Registering All student data
     public function Registerstudent(Request $request)
     {
         $validatedData = $request->validate([

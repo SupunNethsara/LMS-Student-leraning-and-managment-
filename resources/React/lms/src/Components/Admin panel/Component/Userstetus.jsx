@@ -16,34 +16,6 @@ function Userstetus() {
 
 
     '& .MuiBadge-badge': {
-      backgroundColor: '#44b700',
-      color: '#44b700',
-      boxShadow: `0 0 0 2px ${theme.palette.background.paper}`,
-      '&::after': {
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        width: '100%',
-        height: '100%',
-        borderRadius: '50%',
-        animation: 'ripple 1.2s infinite ease-in-out',
-        border: '1px solid currentColor',
-        content: '""',
-      },
-    },
-    '@keyframes ripple': {
-      '0%': {
-        transform: 'scale(.8)',
-        opacity: 1,
-      },
-      '100%': {
-        transform: 'scale(2.4)',
-        opacity: 0,
-      },
-    },
-  }));
-  const StyledBadged = styled(Badge)(({ theme }) => ({
-    '& .MuiBadge-badge': {
       backgroundColor: 'red',
       color: 'red',
       boxShadow: `0 0 0 2px ${theme.palette.background.paper}`,
@@ -70,6 +42,25 @@ function Userstetus() {
       },
     },
   }));
+
+
+  useEffect(() => {
+    getallregisterusers();
+  }, []);
+
+  const getallregisterusers = async () => {
+    try {
+      const response = await axios.post('http://127.0.0.1:8000/api/getdataregister');
+
+      setStudentdata(response.data.userdetails);
+
+
+    } catch (error) {
+      console.error("Error fetching user details:", error);
+    }
+
+  }
+
 
   const email = localStorage.getItem("email");
 
@@ -101,7 +92,7 @@ function Userstetus() {
 
       <div style={{ backgroundColor: '#ffffff' }} className='stetus m-4  p-2 ' id='demo'>
 
-        <p style={{ fontWeight:'600', paddingBottom: '7px', fontSize: '18px', color: '#5d5f61' }}><span style={{ padding: '10px' }}><PeopleAltIcon /></span> Online Users</p>
+        <p style={{ fontWeight: '600', paddingBottom: '7px', fontSize: '18px', color: '#5d5f61' }}><span style={{ padding: '10px' }}><PeopleAltIcon /></span> Online Users</p>
 
 
         <div className='ste'>
@@ -111,20 +102,33 @@ function Userstetus() {
               overlap="circular"
               anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
               variant="dot"
+              classes={{ dot: 'custom-green-dot' }}
             >
               <div class="relative w-8 h-8 overflow-hidden bg-gray-100 rounded-full ">
                 <svg class="absolute w-10 h-10 text-gray-400 -left-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path></svg>
               </div>
             </StyledBadge>
-            <span style={{ margin: '25px', color: 'rgb(100, 97, 97)', fontSize: '12px' ,fontWeight:'500' }}>{userData.register.fname} {userData.register.lname}<span className='ml-4 text-green-500'>{userData.post.status}</span> </span>
-
-            <div>
-
-            </div>
-
+            <span style={{ margin: '25px', color: 'rgb(100, 97, 97)', fontSize: '12px', fontWeight: '500' }}>{userData.register.fname} {userData.register.lname}<span className='ml-4 text-green-500 float-right'>{userData.post.status}</span> </span>
 
           </div>
+          {studentdata.map((user) => (
+            <div className='mt-3'>
+              <StyledBadge
+                overlap="circular"
+                anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+                variant="dot"
+               
+              >
+                <div class="relative w-8 h-8 overflow-hidden bg-gray-100 rounded-full ">
+                  <svg class="absolute w-10 h-10 text-gray-400 -left-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path></svg>
+                </div>
+              </StyledBadge>
 
+
+              <span style={{ margin: '25px', color: 'rgb(100, 97, 97)', fontSize: '12px', fontWeight: '500' }}>{user.fname} {user.lname}<span className='ml-4 text-red-500 float-right'>offline</span> </span>
+
+            </div>
+          ))}
         </div>
 
 
