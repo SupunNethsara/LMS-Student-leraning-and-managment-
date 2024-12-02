@@ -26,8 +26,8 @@ function Admindashboard() {
   const handleLogout = async () => {
     try {
       const response = await axios.post('http://localhost:8000/api/logout');
-      alert(response.data.message); // Show success message
-      window.location.href = '/'; // Redirect to login page
+      alert(response.data.message); 
+      window.location.href = '/'; 
     } catch (error) {
       console.error('Logout failed:', error.response?.data || error.message);
       alert('Logout failed. Please try again.');

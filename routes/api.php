@@ -11,6 +11,8 @@ Route::post('/Count', [LoginController::class, 'Calculatecount']);
 Route::post('/register', [LoginController::class, 'Registerstudent']);
 Route::post('/logout', [LoginController::class, 'logout']);
 Route::post('/getdataregister', [LoginController::class, 'getdataRegister']);
+Route::post('/update-status', [LoginController::class, 'updateStatus']);
+Route::post('/getlogin-details', [LoginController::class, 'getUserDetails']);
 
 
 

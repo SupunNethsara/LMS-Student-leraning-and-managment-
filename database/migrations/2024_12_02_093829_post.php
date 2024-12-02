@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->string('role')->default('user');
+            $table->enum('status', ['online', 'offline'])->default('offline');
             $table->timestamps();
         });
 
@@ -29,3 +30,4 @@ return new class extends Migration
         Schema::dropIfExists('post');
     }
 };
+

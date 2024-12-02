@@ -67,6 +67,7 @@ const Loginform = () => {
       // Store user profile and token in localStorage
       if (userProfile) {
         localStorage.setItem('userProfile', JSON.stringify(userProfile));
+        localStorage.setItem("email",email);
       } else {
         console.warn('User profile is missing in response.');
       }
