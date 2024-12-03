@@ -9,7 +9,6 @@ import './Component.scss'
 function Userstetus() {
 
   const [studentdata, setStudentdata] = useState([]);
-  const [logdata, setLogdata] = useState([]);
   const [userData, setUserData] = useState(null);
 
   const StyledBadge = styled(Badge)(({ theme }) => ({

@@ -1,10 +1,14 @@
 import React, { useState } from 'react'
 import '../Routing/Adminpanel.scss';
 import axios from 'axios';
+import Breadcumb from '../Breadcumb';
 
 function Registration() {
-    //     const [email, setEmail] = useState('');
-    // const [password, setPassword] = useState('');
+//Props For sharing heading Title and brusms
+    const breadcumbItems = [
+        { label: 'Home', link: '#', icon: 'M19.707 9.293l-2-2-7-7a1 1 0 0 0-1.414 0l-7 7-2 2a1 1 0 0 0 1.414 1.414L2 10.414V18a2 2 0 0 0 2 2h3a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h3a2 2 0 0 0 2-2v-7.586l.293.293a1 1 0 0 0 1.414-1.414Z' },
+        { label: 'Registration' },
+    ];
 
     const [fname, setfname] = useState('');
     const [mname, setMname] = useState('');
@@ -17,10 +21,11 @@ function Registration() {
     const [qulification, setQelification] = useState('');
     const [role, setRole] = useState('');
     const [adress, setAdress] = useState('');
-    const [profile, setProfile] = useState(null);
+    const [profile, setProfile] = useState('');
     const [showToast, setShowToast] = useState(false);
 
     const handleFileChange = (e) => {
+        console.log(e.target.files)
         setProfile(e.target.files[0]);
     };
     const handleSubmit = async (e) => {
@@ -39,7 +44,7 @@ function Registration() {
 
         } catch (error) {
             console.error('Error:', error.response ? error.response.data : error.message);
-          
+
         }
 
         //  
@@ -48,8 +53,11 @@ function Registration() {
 
     return (
         <div className='register-main'>
-            <div className="head">
-                <h3 className=' font-bold  m-5 text-xl  text-slate-800 '>Registration</h3>
+            <div style={{ width: '100%' }} className="flex justify-between items-center">
+                <h3 style={{ fontSize: '25px', color: '#6a6b6b', fontFamily: '"Poppins", serif', }} className="m-4 font-semibold ml-5">
+                    Registration
+                </h3>
+                <Breadcumb items={breadcumbItems} />
             </div>
 
             <form onSubmit={handleSubmit}>
@@ -206,7 +214,7 @@ function Registration() {
                         A profile picture is useful to confirm you are logged into your account
                     </div>
                 </div>
-            
+
                 {showToast && (
                     <div class="flex items-center p-4 mb-4 text-sm text-green-800 border border-green-300 rounded-lg bg-green-50 mt-10 " role="alert">
                         <svg class="flex-shrink-0 inline w-4 h-4 me-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">

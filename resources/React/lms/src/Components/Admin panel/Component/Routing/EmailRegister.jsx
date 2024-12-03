@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios';
+import Breadcumb from '../Breadcumb';
 function EmailRegister() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -58,6 +59,12 @@ function EmailRegister() {
           </form> */}
 
       <div className="max-w-md mx-auto mt-10">
+      <div style={{ width: '100%' }} className="flex justify-between items-center">
+                <h3 style={{ fontSize: '25px', color: '#6a6b6b', fontFamily: '"Poppins", serif', }} className="m-4 font-semibold ml-5">
+                    Registration
+                </h3>
+                <Breadcumb items={breadcumbItems} />
+            </div>
         {/* Section Heading */}
         <div className="text-center mb-6">
           <h1 className="display-6 fw-bold text-primary mb-4">

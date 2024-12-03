@@ -12,6 +12,7 @@ import Statics from './Components/Admin panel/Component/Routing/Statics';
 import Registration from './Components/Admin panel/Component/Routing/Registration';
 
 import EmailRegister from './Components/Admin panel/Component/Routing/EmailRegister';
+import Task from './Components/Admin panel/Component/Routing/Task';
 
 
 
@@ -27,6 +28,7 @@ function App() {
           <Route path='/adminpanel' element={<Admindashboard />}>
             <Route index element={<Statics />} />
             <Route path="dashboard" element={<Statics />} />
+            <Route path="taskupload" element={<Task/>} />
             <Route path="registration" element={<Registration />} />
             <Route path="emails" element={<EmailRegister />} />
           </Route>
