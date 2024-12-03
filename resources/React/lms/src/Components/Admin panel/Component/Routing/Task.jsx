@@ -1,6 +1,7 @@
 import React from 'react'
 import Breadcumb from '../Breadcumb';
 import Model from '../Task-manager/model';
+import Tasktable from '../Task-manager/Tasktable';
 
 function Task() {
   const breadcumbItems = [
@@ -15,7 +16,17 @@ function Task() {
         </h3>
         <Breadcumb items={breadcumbItems} />
       </div>
-      <Model/>
+
+      <div className='grid col-span-1'>
+        <Model />
+        <div style={{ width: '100%' }} className='Taskdash'>
+          <Tasktable />
+        </div>
+      </div>
+
+
+
+
     </div>
   )
 }

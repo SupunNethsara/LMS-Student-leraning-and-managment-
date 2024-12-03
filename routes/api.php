@@ -15,10 +15,11 @@ Route::post('/logout', [LoginController::class, 'logout']);
 Route::post('/getdataregister', [LoginController::class, 'getdataRegister']);
 Route::post('/update-status', [LoginController::class, 'updateStatus']);
 Route::post('/getlogin-details', [LoginController::class, 'getUserDetails']);
-Route::post('/getTaskDetails', [TaskController::class, 'SendTaskDetails']);
 
 
-
+//Task manager
+Route::post('/postTaskDetails', [TaskController::class, 'SendTaskDetails']);
+Route::post('/getTaskDetails', [TaskController::class, 'getalldataTask']);
 
 
 

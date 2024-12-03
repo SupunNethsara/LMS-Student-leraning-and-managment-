@@ -1,7 +1,7 @@
-import { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react'
 import axios from 'axios';
+function Tasktable() {
 
-const UserTable = () => {
     const [studentdata, setStudentdata] = useState([]);
 
     useEffect(() => {
@@ -10,19 +10,13 @@ const UserTable = () => {
 
     const fetchUserDetails = async () => {
         try {
-            const response = await axios.post('http://127.0.0.1:8000/api/getdataregister');
-
-            setStudentdata(response.data.userdetails);
-          
-
+            const response = await axios.post('http://localhost:8000/api/getTaskDetails');
+            console.log(response.data);
+            setStudentdata(response.data.taskdetails);
         } catch (error) {
             console.error("Error fetching user details:", error);
         }
-
-    
     };
-
-
     return (
         <div>
             <div className="tablechart relative overflow-x-auto shadow-xl sm:rounded-lg m-5 mt-6">
@@ -122,57 +116,55 @@ const UserTable = () => {
                                 </div>
                             </th>
                             <th scope="col" className="px-6 py-3">
-                                Name
+                                Project Name
                             </th>
                             <th scope="col" className="px-6 py-3">
-                                Selected Course
+                                Project Title
                             </th>
                             <th scope="col" className="px-6 py-3">
-                                Role
+                                Project View
                             </th>
                             <th scope="col" className="px-6 py-3">
-                                Action
+                                Status
                             </th>
                         </tr>
                     </thead>
 
                     <tbody>
-                        {studentdata.map((user) => (
-                            <tr className="bg-white border-b" key={user.id}>
+                        {studentdata && studentdata.map((task) => (
+                            <tr className="bg-white border-b" key={task.id}>
                                 <td className="w-4 p-4">
                                     <div className="flex items-center">
                                         <input
-                                            id={`checkbox-table-search-${user.id}`}
+                                            id={`checkbox-table-search-${task.id}`}
                                             type="checkbox"
                                             className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500"
                                         />
                                         <label
-                                            htmlFor={`checkbox-table-search-${user.id}`}
+                                            htmlFor={`checkbox-table-search-${task.id}`}
                                             className="sr-only"
                                         >
                                             checkbox
                                         </label>
                                     </div>
                                 </td>
-                                <th scope="row" className="flex items-center px-6 py-4">
-                                    <div class="relative w-10 h-10 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600">
-                                        <svg class="absolute w-12 h-12 text-gray-400 -left-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path></svg>
-                                    </div>
-                                    <div className="ps-3">
-                                        <div className="text-base font-semibold">{user.fname} {user.lname}</div>
-                                        <div className="font-normal text-gray-500">{user.email}</div>
-                                    </div>
-                                </th>
-                                <td className="px-6 py-4">{user.corce}</td>
+                              
+                                <td className="px-6 py-4">{task.projectname}</td>
                                 <td className="px-6 py-4">
                                     <div className="flex items-center">
-                                        {/* <div className="h-2.5 w-2.5 rounded-full bg-green-500 me-2"></div> Online */}
-                                        <div className="font-normal text-gray-500">{user.role}</div>
+                                       
+                                        <div className="font-normal text-gray-500">{task.projecttitle}</div>
                                     </div>
                                 </td>
                                 <td className="px-6 py-4">
-                                    <a href="#" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">
-                                        Edit user
+                                    <div className="flex items-center">
+                                       
+                                        <div className="font-normal text-gray-500">{task.projectview}</div>
+                                    </div>
+                                </td>
+                                <td className="px-6 py-4">
+                                    <a href="#" className="font-medium text-green-600 dark:text-green-500 hover:underline">
+                                        Done
                                     </a>
                                 </td>
                             </tr>
@@ -181,7 +173,8 @@ const UserTable = () => {
                 </table>
             </div>
         </div>
-    );
-};
 
-export default UserTable;
+    )
+}
+
+export default Tasktable

@@ -8,6 +8,10 @@ function EmailRegister() {
   const [errorshowToast, seterrorShowToast] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
 
+  const breadcumbItems = [
+    { label: 'Home', link: '#', icon: 'M19.707 9.293l-2-2-7-7a1 1 0 0 0-1.414 0l-7 7-2 2a1 1 0 0 0 1.414 1.414L2 10.414V18a2 2 0 0 0 2 2h3a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h3a2 2 0 0 0 2-2v-7.586l.293.293a1 1 0 0 0 1.414-1.414Z' },
+    { label: 'Email Resgitration' },
+  ];
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -35,36 +39,15 @@ function EmailRegister() {
   return (
     <div>
 
-      {/* <form onSubmit={handleSubmit} className="login-form max-w-sm mx-auto mt-10">
-           
-            <div className="mb-2">
-              <label for="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your email</label>
-              <input type="email" id="email" value={email}  onChange={(e) => setEmail(e.target.value)} className="input-field" placeholder='user name'   />
-            </div>
-            <div className="mb-5">
-              <label for="password" className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your password</label>
-              <input type="password" id="password" value={password}  onChange={(e) => setPassword(e.target.value)} className="password-area" placeholder='Password' />
-            </div>
-
-            <div className="flex items-start mb-5">
-              <div classname="flex items-center h-5">
-                <input id="terms" type="checkbox" value="" className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800" required />
-              </div>
-              <label for="terms" className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">I agree with the <a href="#" className="text-blue-600 hover:underline dark:text-blue-500">terms and conditions</a></label>
-            </div>
-            <button style={{ width: '100%', borderRadius: '50px' }}
-              type="submit"
-              className="mb-10 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-8 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 w-64">Sign up
-            </button>
-          </form> */}
-
+       <div style={{ width: '100%' }} className="flex justify-between items-center">
+          <h3 style={{ fontSize: '25px', color: '#6a6b6b', fontFamily: '"Poppins", serif', }} className="m-4 font-semibold ml-5">
+            Email Registration
+          </h3>
+          <Breadcumb items={breadcumbItems} />
+        </div>
+     
       <div className="max-w-md mx-auto mt-10">
-      <div style={{ width: '100%' }} className="flex justify-between items-center">
-                <h3 style={{ fontSize: '25px', color: '#6a6b6b', fontFamily: '"Poppins", serif', }} className="m-4 font-semibold ml-5">
-                    Registration
-                </h3>
-                <Breadcumb items={breadcumbItems} />
-            </div>
+       
         {/* Section Heading */}
         <div className="text-center mb-6">
           <h1 className="display-6 fw-bold text-primary mb-4">
@@ -143,28 +126,28 @@ function EmailRegister() {
             </label>
           </div>
           {errorshowToast && (
-                    <div class="flex items-center p-4 mb-4 text-sm text-red-800 border border-red-300 rounded-lg bg-red-50 mt-10 " role="alert">
-                        <svg class="flex-shrink-0 inline w-4 h-4 me-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
-                        </svg>
-                        <span class="sr-only">Info</span>
-                        <div>
-                            <span class="font-medium">Danger alert! </span>{errorMessage}
-                        </div>
-                    </div>
-                )}
+            <div class="flex items-center p-4 mb-4 text-sm text-red-800 border border-red-300 rounded-lg bg-red-50 mt-10 " role="alert">
+              <svg class="flex-shrink-0 inline w-4 h-4 me-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
+              </svg>
+              <span class="sr-only">Info</span>
+              <div>
+                <span class="font-medium">Danger alert! </span>{errorMessage}
+              </div>
+            </div>
+          )}
 
-                {showToast && (
-                    <div class="flex items-center p-4 mb-4 text-sm text-green-800 border border-green-300 rounded-lg bg-green-50 mt-10 " role="alert">
-                        <svg class="flex-shrink-0 inline w-4 h-4 me-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
-                        </svg>
-                        <span class="sr-only">Info</span>
-                        <div>
-                            <span class="font-medium">Success alert!</span> New Student Data is submitted .
-                        </div>
-                    </div>
-                )}
+          {showToast && (
+            <div class="flex items-center p-4 mb-4 text-sm text-green-800 border border-green-300 rounded-lg bg-green-50 mt-10 " role="alert">
+              <svg class="flex-shrink-0 inline w-4 h-4 me-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
+              </svg>
+              <span class="sr-only">Info</span>
+              <div>
+                <span class="font-medium">Success alert!</span> New Student Data is submitted .
+              </div>
+            </div>
+          )}
           {/* Submit Button */}
           <button
             type="submit"

@@ -100,29 +100,6 @@ class LoginController extends Controller
         return response()->json(['logindetails' => $getLoginDetails]);
     }
 
-    //Login Authentication and compare with Register table email
-    // public function login(Request $request)
-    // {
-    //     $validatedData = $request->validate([
-    //         'email' => 'required|email',
-    //         'password' => 'required',
-    //     ]);
-
-    //     if (Auth::attempt(['email' => $validatedData['email'], 'password' => $validatedData['password']])) {
-         
-    //         $user = Auth::user();
-    //         $userProfile = StudentRegister::where('email', $user->email)->first();
-
-
-    //         return response()->json([
-    //             'message' => 'Login successful',
-    //             'role' => $user->role,
-    //             'profile' => $userProfile,
-    //         ], 200);
-    //     } else {
-    //         return response()->json(['message' => 'Invalid credentials'], 401);
-    //     }
-    // }
     public function login(Request $request)
     {
         $validatedData = $request->validate([
