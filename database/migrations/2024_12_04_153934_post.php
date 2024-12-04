@@ -11,13 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('post', function (Blueprint $table) {
+        Schema::create('accounts', function (Blueprint $table) {
             $table->id();
-            $table->string('email')->unique();
+            $table->string('email');
             $table->string('password');
             $table->string('role')->default('user');
+            $table->string('corce');
             $table->enum('status', ['online', 'offline'])->default('offline');
-            $table->timestamps();
+            $table->unsignedBigInteger('student_register_id')->nullable();
+            $table->foreign('student_register_id')->references('id')->on('student_registers')->onDelete('cascade');
+            
+
+             $table->timestamps();
         });
 
     }
@@ -27,7 +32,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('post');
+        Schema::dropIfExists('accounts');
     }
 };
 

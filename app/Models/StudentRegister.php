@@ -1,12 +1,12 @@
 <?php
-
 namespace App\Models;
 
-
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 class StudentRegister extends Authenticatable
 {
-    protected $table ='register';
+    use HasFactory;
+   
     protected $fillable = [
         'fname',
         'mname',
@@ -21,4 +21,7 @@ class StudentRegister extends Authenticatable
         'adress',
         'profile',
     ];
+    public function posttable(){
+        return $this->hasOne(Account::class);
+    }
 }

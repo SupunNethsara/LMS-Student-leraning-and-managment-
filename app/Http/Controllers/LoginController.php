@@ -12,21 +12,7 @@ use Symfony\Component\HttpFoundation\Request as HttpFoundationRequest;
 
 class LoginController extends Controller
 {
-    public function signup(Request $request)
-    {
-        $validatedData = $request->validate([
-            'email' => 'required|email',
-            'password' => 'required',
-        ]);
-
-        Account::create([
-            'email' => $validatedData['email'],
-            'password' => bcrypt($validatedData['password']),
-            'role' => $request->input('role', 'user'),
-        ]);
-
-        return response()->json(['message' => 'User created successfully'], 201);
-    }
+   
 
     // Registering All student data
     public function Registerstudent(Request $request)
@@ -49,7 +35,7 @@ class LoginController extends Controller
         if ($request->hasFile('profile')) {
             $profilePath = $request->file('profile')->store('profiles', 'public');
         }
-        StudentRegister::create([
+        $register = StudentRegister::create([
             'fname' => $validatedData['fname'],
             'mname' => $validatedData['mname'],
             'lname' => $validatedData['lname'],
@@ -63,19 +49,27 @@ class LoginController extends Controller
             'adress' => $validatedData['adress'],
             'profile' => $profilePath,
         ]);
+        $register->posttable()->create([
+            'email' => $validatedData['email'],
+            'password' => bcrypt($validatedData['password']),
+           
+            'role'=>'user',
+            'corce'=>$validatedData['corce'],
+
+        ]);
 
 
         return response()->json(['message' => 'User created successfully'], 201);
     }
 
 
-    //Register and post table data together
+   
     public function getUserDetails(Request $request)
     {
         $email = $request->email;
 
-        $registerData = DB::table('register')->where('email', $email)->first();
-        $postData = DB::table('post')->where('email', $email)->first();
+        $registerData = DB::table('student_registers')->where('email', $email)->first();
+        $postData = DB::table('accounts')->where('email', $email)->first();
 
         if ($registerData && $postData) {
             return response()->json([
@@ -100,6 +94,7 @@ class LoginController extends Controller
         return response()->json(['logindetails' => $getLoginDetails]);
     }
 
+ 
     public function login(Request $request)
     {
         $validatedData = $request->validate([
@@ -111,7 +106,7 @@ class LoginController extends Controller
             $email = $request->email;
             $user = Auth::user();
             // Update status to 'online' when logged in
-            DB::table('post')->where('email', $email)->update(['status' => 'online']);
+            DB::table('accounts')->where('email', $email)->update(['status' => 'online']);
     
             // Get user profile
             $userProfile = StudentRegister::where('email', $user->email)->first();
@@ -125,7 +120,6 @@ class LoginController extends Controller
             return response()->json(['message' => 'Invalid credentials'],401);
         }
     }
-
     
 
 //logout when Admin and use Dashboard

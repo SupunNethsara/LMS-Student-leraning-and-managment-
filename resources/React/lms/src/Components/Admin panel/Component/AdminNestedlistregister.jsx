@@ -46,18 +46,7 @@ function AdminNestedlistregister() {
                         </List>
                     </Collapse>
                 </Link>
-                <Link to="emails">
-                <Collapse in={open} timeout="auto" unmountOnExit>
-                    <List component="div" disablePadding>
-                        <ListItemButton sx={{ pl: 4 }}>
-                            <ListItemIcon>
-                                < TaskAltIcon />
-                            </ListItemIcon>
-                            <ListItemText primary="Register E-mails" />
-                        </ListItemButton>
-                    </List>
-                </Collapse>
-                </Link>
+               
 
             </List>
         </div>

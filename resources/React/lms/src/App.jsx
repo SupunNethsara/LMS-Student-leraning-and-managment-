@@ -11,7 +11,7 @@ import Recordings from './Components/Dashboards/Components/Recordings';
 import Statics from './Components/Admin panel/Component/Routing/Statics';
 import Registration from './Components/Admin panel/Component/Routing/Registration';
 
-import EmailRegister from './Components/Admin panel/Component/Routing/EmailRegister';
+
 import Task from './Components/Admin panel/Component/Routing/Task';
 
 
@@ -30,7 +30,7 @@ function App() {
             <Route path="dashboard" element={<Statics />} />
             <Route path="taskupload" element={<Task/>} />
             <Route path="registration" element={<Registration />} />
-            <Route path="emails" element={<EmailRegister />} />
+          
           </Route>
           <Route path='/dashboard' element={<Dashboardpanel />}>
             <Route index element={<Dashboard_content />} />
