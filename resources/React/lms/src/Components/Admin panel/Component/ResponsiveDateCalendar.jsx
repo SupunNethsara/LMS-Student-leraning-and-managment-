@@ -10,7 +10,7 @@ const ResponsiveDateCalendar = () => {
   const isSmallScreen = useMediaQuery(theme.breakpoints.down('sm'));
 
   return (
-    <div style={{background:'#ffffff'}} className=' m-3'>
+    <div style={{background:'#ffffff'}} className='m-4'>
         <ThemeProvider theme={theme}>
       <LocalizationProvider dateAdapter={AdapterDayjs}>
         <DateCalendar

@@ -112,7 +112,7 @@ function Dashboardpanel() {
         </div>
       </aside>
 
-      <div style={{ height: 'auto', backgroundColor: '#f2f6fc' }} className="sm:ml-64">
+      <div style={{ height: 'auto', backgroundColor: '#ededed' }} className="sm:ml-64">
         <div className="p-4 mt-auto">
           <div style={{ backgroundColor: '#ffffff', height: '100vh', borderRadius: '10px' }} className="grid grid-cols- gap-4 mb-4">
             <Outlet />
