@@ -24,4 +24,5 @@ class StudentRegister extends Authenticatable
     public function posttable(){
         return $this->hasOne(Account::class);
     }
+
 }

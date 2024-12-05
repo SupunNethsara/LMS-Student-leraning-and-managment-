@@ -63,7 +63,7 @@ class LoginController extends Controller
     }
 
 
-   
+    //all together resgiter and account
     public function getUserDetails(Request $request)
     {
         $email = $request->email;

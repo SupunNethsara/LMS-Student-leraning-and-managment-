@@ -46,6 +46,18 @@ function AdminNestedlistregister() {
                         </List>
                     </Collapse>
                 </Link>
+                <Link to="AddPayment">
+                    <Collapse in={open} timeout="auto" unmountOnExit>
+                        <List component="div" disablePadding>
+                            <ListItemButton sx={{ pl: 4 }}>
+                                <ListItemIcon>
+                                    < TaskAltIcon />
+                                </ListItemIcon>
+                                <ListItemText primary="Add Payment" />
+                            </ListItemButton>
+                        </List>
+                    </Collapse>
+                </Link>
                
 
             </List>

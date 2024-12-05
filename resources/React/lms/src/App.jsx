@@ -13,6 +13,7 @@ import Registration from './Components/Admin panel/Component/Routing/Registratio
 
 
 import Task from './Components/Admin panel/Component/Routing/Task';
+import Payment from './Components/Admin panel/Component/Payments/Payment';
 
 
 
@@ -30,7 +31,7 @@ function App() {
             <Route path="dashboard" element={<Statics />} />
             <Route path="taskupload" element={<Task/>} />
             <Route path="registration" element={<Registration />} />
-          
+            <Route path="Addpayment" element={<Payment />} />
           </Route>
           <Route path='/dashboard' element={<Dashboardpanel />}>
             <Route index element={<Dashboard_content />} />

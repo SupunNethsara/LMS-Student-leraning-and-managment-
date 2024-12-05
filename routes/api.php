@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\logoutController;
+use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\profileController;
 use App\Http\Controllers\TaskController;
 use Illuminate\Support\Facades\Route;
@@ -22,5 +23,5 @@ Route::post('/postTaskDetails', [TaskController::class, 'SendTaskDetails']);
 Route::post('/getTaskDetails', [TaskController::class, 'getalldataTask']);
 
 
-
+//payment
 
