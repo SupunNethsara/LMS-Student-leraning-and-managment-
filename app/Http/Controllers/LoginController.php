@@ -116,11 +116,19 @@ class LoginController extends Controller
             return response()->json([
                 'message' => 'Login successful',
                 'role' => $user->role,
+                
                 'profile' => [
                     'student_register_id' => $userProfile->id,  // Adding student_register_id explicitly
-                    // Include other necessary profile fields here
-                    'name' => $userProfile->name,
+                    'gender'=>$userProfile->gender,
+                    'fname' => $userProfile->fname,
+                    'mname' => $userProfile->mname,
+                    'lname' => $userProfile->lname,
+                    'adress' => $userProfile->adress,
+                    'role' => $userProfile->role,
+                    'corce' => $userProfile->corce,
+                    'qulification' => $userProfile->qulification,
                     'email' => $userProfile->email,
+                    'contact' => $userProfile->contact,
                 ],
             ], 200);
         } else {
