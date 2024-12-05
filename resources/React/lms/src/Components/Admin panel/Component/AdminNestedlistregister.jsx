@@ -9,6 +9,7 @@ import AssignmentIcon from '@mui/icons-material/Assignment';
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
 import TaskAltIcon from '@mui/icons-material/TaskAlt';
+import AttachMoneyIcon from '@mui/icons-material/AttachMoney';
 function AdminNestedlistregister() {
 
     const [open, setOpen] = React.useState(false);
@@ -30,7 +31,7 @@ function AdminNestedlistregister() {
                     <ListItemIcon>
                         <AssignmentIcon />
                     </ListItemIcon>
-                    <ListItemText primary="Student Register" />
+                    <ListItemText primary="Student Details" />
                     {open ? <ExpandLess /> : <ExpandMore />}
                 </ListItemButton>
 
@@ -51,7 +52,7 @@ function AdminNestedlistregister() {
                         <List component="div" disablePadding>
                             <ListItemButton sx={{ pl: 4 }}>
                                 <ListItemIcon>
-                                    < TaskAltIcon />
+                                 <AttachMoneyIcon/>
                                 </ListItemIcon>
                                 <ListItemText primary="Add Payment" />
                             </ListItemButton>

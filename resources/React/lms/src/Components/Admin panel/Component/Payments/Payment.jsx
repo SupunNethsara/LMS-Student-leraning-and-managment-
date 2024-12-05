@@ -1,6 +1,7 @@
 import React from 'react'
 import Breadcumb from '../Breadcumb';
 import Paymentmodal from './Paymentmodal';
+import Paymenttable from './Paymenttable';
 
 function Payment() {
     const breadcumbItems = [
@@ -16,12 +17,18 @@ function Payment() {
                 </h3>
                 <Breadcumb items={breadcumbItems} />
             </div>
-            <div>
-                <button data-modal-target="default-modal" data-modal-toggle="default-modal" class="block text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center float-right m-3" type="button">
-                + Add Details
-                </button>
-                <Paymentmodal/>
+            <div className='grid col-span-1'>
+                <Paymentmodal />
+                <Paymenttable />
             </div>
+
+
+
+
+
+
+
+
         </div>
     )
 }
