@@ -110,11 +110,18 @@ class LoginController extends Controller
     
             // Get user profile
             $userProfile = StudentRegister::where('email', $user->email)->first();
-    
+            if (!$userProfile) {
+                return response()->json(['message' => 'Profile not found'], 404);
+            }
             return response()->json([
                 'message' => 'Login successful',
                 'role' => $user->role,
-                'profile' => $userProfile,
+                'profile' => [
+                    'student_register_id' => $userProfile->id,  // Adding student_register_id explicitly
+                    // Include other necessary profile fields here
+                    'name' => $userProfile->name,
+                    'email' => $userProfile->email,
+                ],
             ], 200);
         } else {
             return response()->json(['message' => 'Invalid credentials'],401);

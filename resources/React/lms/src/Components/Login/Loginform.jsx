@@ -51,7 +51,7 @@ const Loginform = () => {
   const handleSubmit = async (e) => {
   e.preventDefault();
 
-  // Clear any previous error messages
+  
   setErrorMessage('');
 
   try {
@@ -66,8 +66,18 @@ const Loginform = () => {
 
       // Store user profile and token in localStorage
       if (userProfile) {
-        localStorage.setItem('userProfile', JSON.stringify(userProfile));
+       const getprofile = localStorage.setItem('userProfile', JSON.stringify(userProfile));
+          console.log(getprofile);
+
+          const studentRegisterId = userProfile.student_register_id;
+          console.log('Student Register ID:', studentRegisterId);
+          
+          localStorage.setItem('student_register_id', studentRegisterId);
+          console.log('Student Register ID saved in localStorage:', studentRegisterId);
+          
         localStorage.setItem("email",email);
+        console.log(email)
+
       } else {
         console.warn('User profile is missing in response.');
       }
@@ -83,7 +93,7 @@ const Loginform = () => {
       }
     }
   } catch (error) {
-    // Handle errors
+    
     if (error.response) {
       if (error.response.status === 401) {
         setErrorMessage('Invalid credentials. Please try again.');

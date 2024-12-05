@@ -20,17 +20,18 @@ class PaymentController extends Controller {
 
         return response()->json(['message' => 'Payment saved successfully!', 'payment' => $payment], 201);
     }
- // Fetch Payment Data by User ID
-    public function getPaymentsByUser($id) {
+ 
+    public function getPayments($id)
+    {
+        // Fetch payments for the given student_register_id
         $payments = Payment::where('student_register_id', $id)->get();
-
+    
         if ($payments->isEmpty()) {
             return response()->json(['message' => 'No payments found'], 404);
         }
-
+    
         return response()->json($payments, 200);
     }
-
 
 //All Data
     public function getAlldatapayment(){

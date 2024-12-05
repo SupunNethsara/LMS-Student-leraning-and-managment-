@@ -25,5 +25,7 @@ Route::post('/getTaskDetails', [TaskController::class, 'getalldataTask']);
 
 //payment
 Route::post('/payment', [PaymentController::class, 'store']); // Save payment
-Route::get('/payments/{id}', [PaymentController::class, 'getPaymentsByUser']); 
+
+Route::get('/payments/{id}', [PaymentController::class, 'getPayments']);
+
 Route::post('/paymentsall', [PaymentController::class, 'getAlldatapayment']); 

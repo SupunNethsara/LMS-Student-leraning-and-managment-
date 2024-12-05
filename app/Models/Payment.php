@@ -17,6 +17,6 @@ class Payment extends Model {
     ];
 
     public function student() {
-        return $this->belongsTo(StudentRegister::class);
+        return $this->hasMany(StudentRegister::class);
     }
 }
