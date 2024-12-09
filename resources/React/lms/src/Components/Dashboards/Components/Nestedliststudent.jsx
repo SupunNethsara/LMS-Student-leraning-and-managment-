@@ -1,5 +1,5 @@
 import * as React from 'react';
-
+import { NavLink, Outlet, Link, useNavigate } from 'react-router-dom';
 import List from '@mui/material/List';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
@@ -43,6 +43,7 @@ export default function Nestedliststudent() {
           </ListItemButton>
         </List>
       </Collapse>
+      <Link to = "quiz">
       <Collapse in={open} timeout="auto" unmountOnExit>
         <List component="div" disablePadding>
           <ListItemButton sx={{ pl: 4 }}>
@@ -53,6 +54,7 @@ export default function Nestedliststudent() {
           </ListItemButton>
         </List>
       </Collapse>
+      </Link>
       <Collapse in={open} timeout="auto" unmountOnExit>
         <List component="div" disablePadding>
           <ListItemButton sx={{ pl: 4 }}>

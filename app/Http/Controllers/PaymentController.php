@@ -6,7 +6,7 @@ use App\Models\Payment;
 use Illuminate\Http\Request;
 
 class PaymentController extends Controller {
-    // Save Payment Data
+  
     public function store(Request $request) {
         $validated = $request->validate([
             'student_register_id' => 'required|exists:student_registers,id',

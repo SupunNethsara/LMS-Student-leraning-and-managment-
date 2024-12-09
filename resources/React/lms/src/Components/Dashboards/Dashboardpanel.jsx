@@ -20,20 +20,23 @@ import Profile from './Components/RoutingDash/Profile';
 
 
 
+
+
+
 function Dashboardpanel() {
 
   const handleLogout = async () => {
     try {
       const response = await axios.post('http://localhost:8000/api/logout');
-      alert(response.data.message); // Show success message
-      window.location.href = '/'; // Redirect to login page
+      alert(response.data.message);
+      window.location.href = '/';
     } catch (error) {
       console.error('Logout failed:', error.response?.data || error.message);
       alert('Logout failed. Please try again.');
     }
   };;
-  
-  
+
+
 
   return (
     <>
@@ -67,7 +70,7 @@ function Dashboardpanel() {
                   />
                   <span className="top-0 left-7 absolute w-3.5 h-3.5 bg-green-400 border-2 border-white dark:border-gray-800 rounded-full"></span>
                 </div>
-
+                
                 <Profile />
 
 
@@ -88,9 +91,9 @@ function Dashboardpanel() {
 
             <NestedList />
 
-            <Link to="student">
-              <Nestedliststudent />
-            </Link>
+
+            <Nestedliststudent />
+
 
             <Link to="recording">
               <ListItemButton >
@@ -102,11 +105,11 @@ function Dashboardpanel() {
             </Link>
 
             <ListItemButton onClick={handleLogout}>
-      <ListItemIcon>
-        <ExitToAppIcon />
-      </ListItemIcon>
-      <ListItemText primary="Sign Out" />
-    </ListItemButton>
+              <ListItemIcon>
+                <ExitToAppIcon />
+              </ListItemIcon>
+              <ListItemText primary="Sign Out" />
+            </ListItemButton>
 
           </ul>
         </div>

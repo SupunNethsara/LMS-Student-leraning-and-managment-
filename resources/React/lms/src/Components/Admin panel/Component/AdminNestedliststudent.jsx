@@ -1,5 +1,5 @@
 import * as React from 'react';
-
+import { NavLink, Outlet, Link, useNavigate } from 'react-router-dom';
 import List from '@mui/material/List';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
@@ -33,18 +33,18 @@ export default function AdminNestedliststudent() {
         <ListItemText primary="Class Activity" />
         {open ? <ExpandLess /> : <ExpandMore />}
       </ListItemButton>
-     
+     <Link to ="activities">
       <Collapse in={open} timeout="auto" unmountOnExit>
         <List component="div" disablePadding>
           <ListItemButton sx={{ pl: 4 }}>
             <ListItemIcon>
               <TaskAltIcon  />
             </ListItemIcon>
-            <ListItemText primary="Assigment" />
+            <ListItemText primary="Quizz" />
           </ListItemButton>
         </List>
       </Collapse>
-      
+      </Link>
    
     </List>
   );
