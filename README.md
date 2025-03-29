@@ -1,5 +1,5 @@
 # 🎓 Student Management System (Full-Stack)
-![System Preview](file:///C:/Users/Supun%20Nethsara/Pictures/Screenshots/lms.png)
+
 
 A modern student management system built with **React** (Frontend) and **Laravel** (Backend) with role-based access control, attendance tracking, and academic reporting.
 
