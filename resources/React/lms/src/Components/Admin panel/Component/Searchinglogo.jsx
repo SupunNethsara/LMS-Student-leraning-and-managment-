@@ -52,7 +52,7 @@ function Searchinglogo() {
                 </svg>
               </button>
               <a  className="flex ml-2 md:mr-24">
-                <img src="hq720-removebg-preview.png"  className="h-12 mr-15" alt="FlowBite Logo" />
+              <img className='w-20' src="/logo.png" alt="" srcset="" />
                 <span  className="self-center text-xl font-semibold sm:text-xl whitespace-nowrap dark:text-black mr-14">VLE BIT</span>
               </a>
               <Search>

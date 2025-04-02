@@ -53,7 +53,7 @@ function StudentQuiz() {
         </div>
       ) : (
         <>
-          <h1 className="font-bold">Quiz App</h1>
+          <h1 className="font-bold">Quiz</h1>
           <hr />
           <h2>{currentQuestion.question}</h2>
           <ul>

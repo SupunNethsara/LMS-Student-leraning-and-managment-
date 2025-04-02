@@ -70,7 +70,7 @@ function Dashboardpanel() {
                   />
                   <span className="top-0 left-7 absolute w-3.5 h-3.5 bg-green-400 border-2 border-white dark:border-gray-800 rounded-full"></span>
                 </div>
-                
+
                 <Profile />
 
 
@@ -83,16 +83,18 @@ function Dashboardpanel() {
       <aside style={{ backgroundColor: '#f7f9fa' }} id="logo-sidebar" className="fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform -translate-x-full sm:translate-x-0 " aria-label="Sidebar">
         <div style={{ backgroundColor: '#f7f9fa' }} className=" h-full px-2 pb-4 overflow-y-auto bg-white mt-0 ">
           <ul style={{ fontSize: '14px' }} className="navlink space-y-6 font-medium">
-            <Link to="/dashboard">
+           
+           <div className='p-0 m-0 gap-1'>
+           <Link to="/dashboard">
               <ListItemButton> <ListItemIcon>< DashboardIcon /></ListItemIcon>
                 <ListItemText primary="Dashboard" />
               </ListItemButton>
-            </Link>
+            </Link></div> 
+            <div className='mb-20 gap-1'>
+              <NestedList />
+              <Nestedliststudent />
+            </div>
 
-            <NestedList />
-
-
-            <Nestedliststudent />
 
 
             <Link to="recording">

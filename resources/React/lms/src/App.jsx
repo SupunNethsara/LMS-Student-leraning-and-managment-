@@ -14,7 +14,7 @@ import Registration from './Components/Admin panel/Component/Routing/Registratio
 
 import Task from './Components/Admin panel/Component/Routing/Task';
 import Payment from './Components/Admin panel/Component/Payments/Payment';
-import Activities from './Components/Admin panel/Component/Assignments/Activities';
+
 import Quiz from './Components/Admin panel/Component/Assignments/Quiz';
 import StudentQuiz from './Components/Dashboards/Components/Quiz/StudentQuiz';
 
@@ -35,7 +35,7 @@ function App() {
             <Route path="taskupload" element={<Task />} />
             <Route path="registration" element={<Registration />} />
             <Route path="Addpayment" element={<Payment />} />
-            <Route path="activities" element={<Activities />} />
+            <Route path="uploadquiz" element={<Quiz />} />
           </Route>
           <Route path='/dashboard' element={<Dashboardpanel />}>
             <Route index element={<Dashboard_content />} />
