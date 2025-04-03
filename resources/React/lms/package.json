@@ -19,6 +19,8 @@
     "axios": "^1.7.7",
     "bcryptjs": "^2.4.3",
     "boxicons": "^2.1.4",
+    "cloudinary": "^2.6.0",
+    "cloudinary-react": "^1.8.1",
     "dayjs": "^1.11.13",
     "flowbite": "^2.5.2",
     "primereact": "^10.8.5",

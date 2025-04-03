@@ -67,7 +67,7 @@ function Admindashboard() {
         </div>
       </nav >
       <aside className="fixed text-sm top-0 left-0 z-40 w-64 h-screen transition-transform bg-white border-r border-gray-200 shadow-sm">
-        <div className="h-full px-3 pb-4 overflow-y-auto">
+      <div className="h-full px-3 pb-4 overflow-y-auto">
           <ul className="space-y-2 mt-16">
             {/* Dashboard */}
             <li>
