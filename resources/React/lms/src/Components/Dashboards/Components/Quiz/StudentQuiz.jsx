@@ -10,17 +10,17 @@ function StudentQuiz() {
   const [quizComplete, setQuizComplete] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
   const [flaggedQuestions, setFlaggedQuestions] = useState([]);
-  const [timeLeft, setTimeLeft] = useState(10 * 60); // 10 minutes in seconds
+  const [timeLeft, setTimeLeft] = useState(10 * 60);
   const [timerActive, setTimerActive] = useState(true);
 
-  // Format time as MM:SS
+
   const formatTime = (seconds) => {
     const mins = Math.floor(seconds / 60).toString().padStart(2, '0');
     const secs = (seconds % 60).toString().padStart(2, '0');
     return `${mins}:${secs}`;
   };
 
-  // Timer countdown effect
+ 
   useEffect(() => {
     let interval;
     if (timerActive && timeLeft > 0) {

@@ -10,9 +10,9 @@ function Tasktable() {
 
     const fetchUserDetails = async () => {
         try {
-            const response = await axios.post('http://localhost:8000/api/getTaskDetails');
+            const response = await axios.get('http://localhost:8000/api/getTaskDetails');
             console.log(response.data);
-            setStudentdata(response.data.taskdetails);
+            setStudentdata(response.data.data);
         } catch (error) {
             console.error("Error fetching user details:", error);
         }

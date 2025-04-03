@@ -12,7 +12,7 @@ function Model() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:8000/api/postTaskDetails', {
+            const response = await axios.post('http://localhost:8000/api/tasks', {
                 projectname,
                 projecttitle,
                 projectview,
