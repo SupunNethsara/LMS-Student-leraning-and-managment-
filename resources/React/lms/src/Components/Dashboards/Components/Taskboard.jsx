@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import TaskDetailsModal from '../../Admin panel/Component/TaskDetailsModal';
 
 const Taskboard = () => {
   const [tasks, setTasks] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
-
+  const[Taskshow , setTaskShow] = useState(false);
   const fetchTasks = async () => {
     setIsLoading(true);
     setError(null);
@@ -19,19 +20,19 @@ const Taskboard = () => {
 
       console.log('API Response:', response);
 
-      // Handle different response structures
+     
       let tasksData = response.data;
       if (response.data && response.data.data) {
         tasksData = response.data.data;
       }
 
-      // Ensure we have an array
+
       if (!Array.isArray(tasksData)) {
         console.warn('Expected array but got:', typeof tasksData);
         tasksData = [];
       }
 
-      // Add default status if missing
+  
       const formattedTasks = tasksData.map(task => ({
         ...task,
         status: task.status || 'pending'
@@ -53,6 +54,13 @@ const Taskboard = () => {
   useEffect(() => {
     fetchTasks();
   }, []);
+
+const showTaskAbout = ()=>{
+  setTaskShow(!Taskshow);
+}
+const CloseTaskAbout = ()=>{
+  setTaskShow(false);
+}
 
   const totalTasks = tasks.length;
   const completedTasks = tasks.filter(task => task?.status === 'completed').length;
@@ -93,6 +101,7 @@ const Taskboard = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 p-6">
+  {Taskshow  && (<TaskDetailsModal CloseTaskAbout={CloseTaskAbout} tasks={tasks}/>)}
 
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-gray-800">Task Board</h1>
@@ -160,7 +169,7 @@ const Taskboard = () => {
                       </span>
                     </td>
                     <td className="px-6 py-4">
-                      <button className="bg-green-500 hover:bg-green-600 text-white text-xs font-medium py-1 px-2 rounded">
+                      <button onClick={showTaskAbout} className="bg-green-500 hover:bg-green-600 text-white text-xs font-medium py-1 px-2 rounded">
                         View
                       </button>
                     </td>

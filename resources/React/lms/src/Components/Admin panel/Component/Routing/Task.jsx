@@ -1,7 +1,8 @@
 import React from 'react'
 import Breadcumb from '../Breadcumb';
-import Model from '../Task-manager/model';
+
 import Tasktable from '../Task-manager/Tasktable';
+import Model from '../Task-manager/Model';
 
 function Task() {
   const breadcumbItems = [

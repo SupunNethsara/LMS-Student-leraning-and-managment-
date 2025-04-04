@@ -108,10 +108,10 @@ function StudentQuiz() {
               </svg>
             )}
           </div>
-          <h1 className="text-3xl font-bold text-gray-800 mb-2">
+          <h1 className="text-xl font-bold text-gray-800 mb-2">
             {timeLeft === 0 ? 'Time Expired!' : 'Quiz Complete!'}
           </h1>
-          <p className="text-xl text-gray-600 mb-6">
+          <p className="text-md text-gray-600 mb-6">
             Your Score: <span className="font-bold">{score}</span> / {questions.length}
           </p>
           <div className="mb-8">
@@ -160,7 +160,7 @@ function StudentQuiz() {
         {/* Question Section */}
         <div className="p-6 md:p-8">
           <div className="flex flex-wrap items-center gap-3 mb-6">
-            <h2 className="text-2xl font-bold text-gray-800">Question {currentIndex + 1}</h2>
+            <h2 className="text-md font-bold text-gray-800">Question {currentIndex + 1}</h2>
             {selectedAnswer ? (
               <span className={`inline-flex items-center px-3 py-1 rounded-full text-sm font-medium ${
                 isCorrect ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'
@@ -190,7 +190,7 @@ function StudentQuiz() {
             </label>
           </div>
 
-          <p className="text-xl font-medium text-gray-800 mb-8">
+          <p className="text-md font-medium text-gray-800 mb-8">
             {currentQuestion.question}
           </p>
 

@@ -67,13 +67,13 @@ function Admindashboard() {
         </div>
       </nav >
       <aside className="fixed text-sm top-0 left-0 z-40 w-64 h-screen transition-transform bg-white border-r border-gray-200 shadow-sm">
-      <div className="h-full px-3 pb-4 overflow-y-auto">
+        <div className="h-full px-3 pb-4 overflow-y-auto">
           <ul className="space-y-2 mt-16">
             {/* Dashboard */}
             <li>
               <NavLink
                 to="/adminpanel/dashboard"
-                className={({ isActive }) => 
+                className={({ isActive }) =>
                   `flex items-center p-3 rounded-lg group ${isActive ? 'bg-indigo-50 text-indigo-600' : 'text-gray-700 hover:bg-gray-50'}`
                 }
               >
@@ -100,22 +100,22 @@ function Admindashboard() {
                   </span>
                   <span className="ml-3 font-medium">Student Details</span>
                 </div>
-                <svg 
+                <svg
                   className={`w-4 h-4 transition-transform ${registerDetails ? 'rotate-180' : ''}`}
-                  fill="none" 
-                  stroke="currentColor" 
+                  fill="none"
+                  stroke="currentColor"
                   viewBox="0 0 24 24"
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
                 </svg>
               </button>
-              
+
               {registerDetails && (
                 <ul className="py-1 space-y-1 ml-9">
                   <li>
                     <NavLink
                       to="registration"
-                      className={({ isActive }) => 
+                      className={({ isActive }) =>
                         `flex items-center p-2 pl-4 rounded-lg text-sm ${isActive ? 'bg-indigo-50 text-indigo-600' : 'text-gray-600 hover:bg-gray-100'}`
                       }
                     >
@@ -130,7 +130,7 @@ function Admindashboard() {
                   <li>
                     <NavLink
                       to="Addpayment"
-                      className={({ isActive }) => 
+                      className={({ isActive }) =>
                         `flex items-center p-2 pl-4 rounded-lg text-sm ${isActive ? 'bg-indigo-50 text-indigo-600' : 'text-gray-600 hover:bg-gray-100'}`
                       }
                     >
@@ -150,7 +150,7 @@ function Admindashboard() {
             <li>
               <NavLink
                 to="taskupload"
-                className={({ isActive }) => 
+                className={({ isActive }) =>
                   `flex items-center p-3 rounded-lg group ${isActive ? 'bg-indigo-50 text-indigo-600' : 'text-gray-700 hover:bg-gray-50'}`
                 }
               >
@@ -177,22 +177,22 @@ function Admindashboard() {
                   </span>
                   <span className="ml-3 font-medium">Class Activity</span>
                 </div>
-                <svg 
+                <svg
                   className={`w-4 h-4 transition-transform ${classdetails ? 'rotate-180' : ''}`}
-                  fill="none" 
-                  stroke="currentColor" 
+                  fill="none"
+                  stroke="currentColor"
                   viewBox="0 0 24 24"
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
                 </svg>
               </button>
-              
+
               {classdetails && (
                 <ul className="py-1 space-y-1 ml-9">
                   <li>
                     <NavLink
                       to="uploadquiz"
-                      className={({ isActive }) => 
+                      className={({ isActive }) =>
                         `flex items-center p-2 pl-4 rounded-lg text-sm ${isActive ? 'bg-indigo-50 text-indigo-600' : 'text-gray-600 hover:bg-gray-100'}`
                       }
                     >
@@ -207,7 +207,7 @@ function Admindashboard() {
                   <li>
                     <NavLink
                       to="assignments"
-                      className={({ isActive }) => 
+                      className={({ isActive }) =>
                         `flex items-center p-2 pl-4 rounded-lg text-sm ${isActive ? 'bg-indigo-50 text-indigo-600' : 'text-gray-600 hover:bg-gray-100'}`
                       }
                     >
@@ -227,7 +227,7 @@ function Admindashboard() {
             <li>
               <NavLink
                 to="recording-upload"
-                className={({ isActive }) => 
+                className={({ isActive }) =>
                   `flex items-center p-3 rounded-lg group ${isActive ? 'bg-indigo-50 text-indigo-600' : 'text-gray-700 hover:bg-gray-50'}`
                 }
               >
@@ -258,13 +258,13 @@ function Admindashboard() {
         </div>
       </aside>
 
-      <div style={{ height: 'auto', backgroundColor: '#ededed' }} className="sm:ml-64">
-        <div className="p-4 mt-auto ">
-          <div style={{ backgroundColor: '#ffffff', height: '100vh', borderRadius: '10px' }} className="grid grid-cols-1 gap-4 mb-4">
-            <Outlet />
-          </div>
+      <div style={{ minHeight: '100vh', backgroundColor: '#f5f5f5' }} className="sm:ml-64">
+      <div className="p-4">
+        <div style={{ backgroundColor: '#ffffff', borderRadius: '10px' }} className="grid grid-cols-1 gap-4 mb-4">
+          <Outlet />
         </div>
       </div>
+    </div>
 
     </div>
   )

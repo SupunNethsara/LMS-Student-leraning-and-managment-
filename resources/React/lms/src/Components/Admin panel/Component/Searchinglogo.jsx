@@ -2,6 +2,7 @@ import React from 'react'
 import SearchIcon from '@mui/icons-material/Search';
 import { styled, alpha } from '@mui/material/styles';
 import InputBase from '@mui/material/InputBase';
+import Searchbar from '../Searchbar';
 function Searchinglogo() {
     const Search = styled('div')(({ theme }) => ({
         position: 'relative',
@@ -55,15 +56,7 @@ function Searchinglogo() {
               <img className='w-20' src="/logo.png" alt="" srcset="" />
                 <span  className="self-center text-xl font-semibold sm:text-xl whitespace-nowrap dark:text-black mr-14">VLE BIT</span>
               </a>
-              <Search>
-                <SearchIconWrapper>
-                  <SearchIcon />
-                </SearchIconWrapper>
-                <StyledInputBase
-                  placeholder="Search…"
-                  inputProps={{ 'aria-label': 'search' }}
-                />
-              </Search>
+            <Searchbar/>
             </div>
     </div>
   )
