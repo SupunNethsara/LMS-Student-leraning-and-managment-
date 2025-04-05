@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 use Symfony\Component\HttpFoundation\Request as HttpFoundationRequest;
 
 class LoginController extends Controller
@@ -29,11 +30,26 @@ class LoginController extends Controller
             'qulification' => 'nullable|',
             'role' => 'nullable|',
             'adress' => 'nullable|',
-            'profile' => 'nullable|file|image|max:2048',
+            'profile' => 'nullable|url' 
         ]);
-        $profilePath = null;
+        $profileUrl = null;
         if ($request->hasFile('profile')) {
-            $profilePath = $request->file('profile')->store('profiles', 'public');
+            try {
+                $profileUrl = cloudinary()->upload(
+                    $request->file('profile')->getRealPath()
+                )->getSecurePath();
+            } catch (\Exception $e) {
+                Log::error('Cloudinary upload failed: ' . $e->getMessage());
+                return response()->json([
+                    'message' => 'Profile image upload failed',
+                    'error' => $e->getMessage()
+                ], 500);
+            }
+        }
+
+        if ($request->hasFile('profile')) {
+            $uploadedFile = $request->file('profile');
+            $profileUrl = cloudinary()->upload($uploadedFile->getRealPath())->getSecurePath();
         }
         $register = StudentRegister::create([
             'fname' => $validatedData['fname'],
@@ -47,7 +63,7 @@ class LoginController extends Controller
             'qulification' => $validatedData['qulification'],
             'role' => $validatedData['role'],
             'adress' => $validatedData['adress'],
-            'profile' => $profilePath,
+            'profile' => $validatedData['profile'] ?? null,
         ]);
         $register->posttable()->create([
             'email' => $validatedData['email'],
@@ -105,10 +121,10 @@ class LoginController extends Controller
         if (Auth::attempt(['email' => $validatedData['email'], 'password' => $validatedData['password']])) {
             $email = $request->email;
             $user = Auth::user();
-            // Update status to 'online' when logged in
+         
             DB::table('accounts')->where('email', $email)->update(['status' => 'online']);
     
-            // Get user profile
+        
             $userProfile = StudentRegister::where('email', $user->email)->first();
             if (!$userProfile) {
                 return response()->json(['message' => 'Profile not found'], 404);
@@ -118,7 +134,7 @@ class LoginController extends Controller
                 'role' => $user->role,
                 
                 'profile' => [
-                    'student_register_id' => $userProfile->id,  // Adding student_register_id explicitly
+                    'student_register_id' => $userProfile->id, 
                     'gender'=>$userProfile->gender,
                     'fname' => $userProfile->fname,
                     'mname' => $userProfile->mname,
@@ -129,6 +145,7 @@ class LoginController extends Controller
                     'qulification' => $userProfile->qulification,
                     'email' => $userProfile->email,
                     'contact' => $userProfile->contact,
+                    'profile' => $userProfile->profile,
                 ],
             ], 200);
         } else {
@@ -136,6 +153,8 @@ class LoginController extends Controller
         }
     }
     
+
+  
 
 //logout when Admin and use Dashboard
     public function logout(Request $request)

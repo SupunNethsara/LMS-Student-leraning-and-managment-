@@ -23,7 +23,7 @@ Route::post('/getlogin-details', [LoginController::class, 'getUserDetails']);
 
 //Task manager
 Route::post('/postTaskDetails', [TaskController::class, 'SendTaskDetails']);
-Route::post('/getTaskDetails', [TaskController::class, 'getalldataTask']);
+Route::get('/getTaskDetails', [TaskController::class, 'getalldataTask']);
 
 
 //payment
@@ -41,3 +41,8 @@ Route::post('/questions', [QuestionController::class, 'store']);
 Route::get('/questions/{id}', [QuestionController::class, 'show']);
 Route::put('/questions/{id}', [QuestionController::class, 'update']);
 Route::delete('/questions/{id}', [QuestionController::class, 'destroy']);
+
+
+
+
+

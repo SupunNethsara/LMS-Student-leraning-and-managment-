@@ -23,7 +23,7 @@ export default function TaskDetailsModal({ CloseTaskAbout, tasks }) {
             {tasks.map((task) => (
       <div className="relative p-4 w-full max-w-2xl max-h-full">
         <div className="relative bg-white rounded-lg shadow-lg">
-          {/* Modal Header */}
+       
           <div className="flex items-center justify-between p-4 border-b border-gray-200 rounded-t">
             <h3 className="text-xl font-semibold text-gray-900">
             {task.projectname}
@@ -40,13 +40,13 @@ export default function TaskDetailsModal({ CloseTaskAbout, tasks }) {
             </button>
           </div>
 
-          {/* Modal Body */}
+    
           <div className="p-4 space-y-4">
             <div className="mb-4">
               <span className="bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded">
                 High Priority
               </span>
-              <p className="text-gray-600 mt-2">Closing Date: 2024-11-30</p>
+              <p className="text-gray-600 mt-2">{task.closingdate}</p>
             </div>
 
             <div className="border-t border-b border-gray-200 py-4">
@@ -70,7 +70,7 @@ export default function TaskDetailsModal({ CloseTaskAbout, tasks }) {
             </div>
           </div>
 
-          {/* Modal Footer */}
+          
           <div className="flex items-center p-4 border-t border-gray-200 rounded-b">
             <span className="text-sm text-gray-500">Track In GitHub</span>
           </div>

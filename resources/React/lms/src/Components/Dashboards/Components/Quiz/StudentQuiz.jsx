@@ -137,7 +137,7 @@ function StudentQuiz() {
   return (
     <div className="min-h-screen bg-gray-50 p-4 md:p-8">
       <div className="max-w-6xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden">
-        {/* Header */}
+    
         <div className="border-b border-gray-200 p-6 md:p-8">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
             <button className="text-indigo-600 font-medium hover:text-indigo-800 flex items-center">
@@ -157,7 +157,7 @@ function StudentQuiz() {
           </div>
         </div>
 
-        {/* Question Section */}
+      
         <div className="p-6 md:p-8">
           <div className="flex flex-wrap items-center gap-3 mb-6">
             <h2 className="text-md font-bold text-gray-800">Question {currentIndex + 1}</h2>
@@ -237,7 +237,7 @@ function StudentQuiz() {
             ))}
           </div>
 
-          {/* Footer */}
+         
           <div className="flex justify-between items-center border-t border-gray-200 pt-6">
             <div className="text-gray-500">
               Question {currentIndex + 1} of {questions.length}

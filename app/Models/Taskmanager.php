@@ -12,5 +12,6 @@ class Taskmanager extends Model
        'projecttitle',
        'projectview',
        'description',
+       'closingdate',
     ];
 }
