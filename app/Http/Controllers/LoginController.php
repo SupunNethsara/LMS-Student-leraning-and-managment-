@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\LoginRequest;
+use App\Http\Requests\RegisterStudentRequest;
 use App\Models\Account;
 use App\Models\StudentRegister;
 use Illuminate\Http\Request;
@@ -15,8 +17,8 @@ class LoginController extends Controller
 {
    
 
-    // Registering All student data
-    public function Registerstudent(Request $request)
+   
+    public function Registerstudent(RegisterStudentRequest $request)
     {
         $validatedData = $request->validate([]);
         $profileUrl = null;
@@ -66,7 +68,7 @@ class LoginController extends Controller
     }
 
 
-    //all together resgiter and account
+  
     public function getUserDetails(Request $request)
     {
         $email = $request->email;
@@ -83,14 +85,14 @@ class LoginController extends Controller
         return response()->json(['message' => 'User not found'], 404);
     }
 
-    //getdata Register for Admin panel Table
+
     public function getdataRegister(Request $request)
     {
         $registerdata = StudentRegister::all();
         return response()->json(['userdetails' => $registerdata]);
     }
 
-    //Getlogin data
+
     public function Getlogin(Request $request)
     {
         $getLoginDetails = Account::all();
@@ -98,12 +100,9 @@ class LoginController extends Controller
     }
 
  
-    public function login(Request $request)
+    public function login(LoginRequest $request)
     {
-        $validatedData = $request->validate([
-            'email' => 'required|email',
-            'password' => 'required',
-        ]);
+        $validatedData = $request->validate([]);
     
         if (Auth::attempt(['email' => $validatedData['email'], 'password' => $validatedData['password']])) {
             $email = $request->email;
@@ -143,7 +142,7 @@ class LoginController extends Controller
 
   
 
-//logout when Admin and use Dashboard
+
     public function logout(Request $request)
     {
          Auth::logout();
@@ -152,7 +151,7 @@ class LoginController extends Controller
 
 
     
-//Count users
+
     public function Calculatecount()
     {
         $users = Account::count();
