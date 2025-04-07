@@ -5,6 +5,7 @@ function Model() {
     const [projectname, SetProjectName] = useState('');
     const [projecttitle, SetProjectTitle] = useState('');
     const [projectview, SetProjectView] = useState('');
+    const[closingdate , setClosingDate] = useState('');
     const [description, SetProjectDescription] = useState('');
     const [showToast, setShowToast] = useState(false);
     const [showmodal, setShowModal] = useState(false);
@@ -12,11 +13,12 @@ function Model() {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:8000/api/tasks', {
+            const response = await axios.post('http://localhost:8000/api/postTaskDetails', {
                 projectname,
                 projecttitle,
                 projectview,
                 description,
+                closingdate,
             });
             console.log('response:', response.data);
             setShowToast(true);
@@ -148,6 +150,18 @@ function Model() {
                                             className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
                                             placeholder="Write product description here"
                                         ></textarea>
+                                    </div>
+                                    <div className="col-span-2">
+                                        <label className="block mb-2 text-sm font-medium text-gray-900">
+                                            Closing Date
+                                        </label>
+                                        <input
+                                            type="date"
+                                            value={closingdate}
+                                            onChange={(e) => setClosingDate(e.target.value)}
+                                            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5"
+                                            required
+                                        />
                                     </div>
                                 </div>
                                 <button

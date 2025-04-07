@@ -12,8 +12,10 @@ return new class extends Migration
             $table->id()->unique();
             $table->string('projectname');
             $table->string('projecttitle');
+            $table->date('closingdate'); 
             $table->string('projectview');
-            $table->longText('description'); 
+            $table->longText('description');
+            $table->string('status')->default('pending'); 
             $table->timestamps();
         });
     }

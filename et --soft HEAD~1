@@ -1,0 +1,253 @@
+[33mcommit 6cf73ea57cc4a0539370dff932032d5c13649453[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: Supun Nethsara <supunmax663@gmail.com>
+Date:   Sat Apr 5 01:56:23 2025 -0700
+
+    Comment are removed
+
+[33mcommit 72cb821c11629127fa1b16c04cac393e077f5bad[m
+Author: Supun Nethsara <supunmax663@gmail.com>
+Date:   Sat Apr 5 01:43:09 2025 -0700
+
+    Request Validation File Created for form validation in Login Student
+
+[33mcommit fc06ab5020246cd59e19c0188380c6db511caea2[m
+Author: Supun Nethsara <supunmax663@gmail.com>
+Date:   Sat Apr 5 01:34:35 2025 -0700
+
+    Request Validation File Created for form validation in Register Student
+
+[33mcommit 970a822b0ea2a998b697088e07f18e46886d91c3[m
+Author: Supun Nethsara <supunmax663@gmail.com>
+Date:   Fri Apr 4 21:14:14 2025 -0700
+
+    Updated
+
+[33mcommit c4c3f1622ae2025989c8e8ceebf0795b573c3eb6[m
+Author: Supun Nethsara <supunmax663@gmail.com>
+Date:   Fri Apr 4 00:53:51 2025 -0700
+
+    Project Initial Stage Completed
+
+[33mcommit 44b5a34f0e7759f0f572895517a0a4d737f36cd0[m
+Author: Supun Nethsara <supunmax663@gmail.com>
+Date:   Thu Apr 3 10:30:08 2025 -0700
+
+     Featching Task for Student dashboard
+
+[33mcommit 7fe72e997bafaf4011026830c4ab1cdbb4c18d59[m
+Author: Supun Nethsara <supunmax663@gmail.com>
+Date:   Thu Apr 3 07:01:49 2025 -0700
+
+    Quiz Section Updated
+
+[33mcommit f7457e93480ea30ff1cc149e81ecbb4a4ee73768[m
+Author: Supun Nethsara <supunmax663@gmail.com>
+Date:   Thu Apr 3 02:03:30 2025 -0700
+
+    Student Dashboard Updated
+
+[33mcommit 4cb5e3b5c4d581eee280283fb64297f9706c733e[m
+Merge: 98c8ad5 2de8e73
+Author: Supun Nethsara <supunmax663@gmail.com>
+Date:   Wed Apr 2 11:12:01 2025 -0700
+
+     Sidebar Updated in Admin panel
+
+[33mcommit 98c8ad560e9005b39386feb45079a3d5319b86d3[m
+Author: Supun Nethsara <supunmax663@gmail.com>
+Date:   Wed Apr 2 11:09:19 2025 -0700
+
+     Admin Panel Sidebar updated
+
+[33mcommit 2de8e7356f6b6b04175d0fcf08dc7bd041ec7893[m
+Author: Supun Nethsara <157266532+SupunNethsara@users.noreply.github.com>
+Date:   Sat Mar 29 00:59:02 2025 -0700
+
+    Update README.md
+
+[33mcommit 6c0debc1559afbfb9d04429ec8b0cbb9f94cf885[m
+Author: Supun Nethsara <157266532+SupunNethsara@users.noreply.github.com>
+Date:   Sat Mar 29 00:58:47 2025 -0700
+
+    Update README.md
+
+[33mcommit 1841c0ebaaf98db29333d744831e8200101c4fab[m
+Author: Supun Nethsara <157266532+SupunNethsara@users.noreply.github.com>
+Date:   Sat Mar 29 00:58:26 2025 -0700
+
+    Update README.md
+
+[33mcommit 6f767690c6b9a85ed4a92153f12a12e7e49f88fd[m
+Author: Supun Nethsara <157266532+SupunNethsara@users.noreply.github.com>
+Date:   Sat Mar 29 00:56:19 2025 -0700
+
+    Update README.md
+
+[33mcommit 202c093cc8691d8a692256a3c7d52444584a20a3[m
+Author: Supun Nethsara <supunmax663@gmail.com>
+Date:   Mon Dec 9 05:54:06 2024 -0800
+
+    Quiz section added
+
+[33mcommit 617ab7a37489f6f0939e792766e64eafc7d33a2a[m
+Author: Supun Nethsara <supunmax663@gmail.com>
+Date:   Thu Dec 5 08:01:23 2024 -0800
+
+     Repaired some details in login function at controller about fetch profile details
+
+[33mcommit 28d78a23e71f65185fc2b51f44ca1f0f29d38902[m
+Author: Supun Nethsara <supunmax663@gmail.com>
+Date:   Thu Dec 5 07:24:36 2024 -0800
+
+    set own settled payment details to Student Dashboard
+
+[33mcommit 09ddf265a0c1d5d02db6f6a28b2dcd1dd8f2fe2e[m
+Author: Supun Nethsara <supunmax663@gmail.com>
+Date:   Thu Dec 5 04:53:06 2024 -0800
+
+     Fetch data from payment table and add to table in admin panel
+
+[33mcommit 7c9636f35b3e23bbb680e0d04e8b9888f787f941[m
+Author: Supun Nethsara <supunmax663@gmail.com>
+Date:   Thu Dec 5 03:42:23 2024 -0800
+
+    Send data to payment table from payment details from
+
+[33mcommit bec33d63d25c378b4f7cbe1f818393f395e2af7a[m
+Author: Supun Nethsara <supunmax663@gmail.com>
+Date:   Thu Dec 5 01:14:27 2024 -0800
+
+    created payment component and form
+
+[33mcommit 10fd6161f601f01ebf465e825f2db661d6077419[m
+Author: Supun Nethsara <supunmax663@gmail.com>
+Date:   Wed Dec 4 07:59:26 2024 -0800
+
+     made some changes to the Relashion ship Between accounts&student_registers tables .
+
+[33mcommit 22507ce671868367363ac8c897ca6350637d7f1a[m
+Author: Supun Nethsara <supunmax663@gmail.com>
+Date:   Wed Dec 4 01:08:30 2024 -0800
+
+    User Home Dashboard is Created
+
+[33mcommit 5a8c5ef3ba2397df9f8e1fdf259fc850e997f06a[m
+Author: Supun Nethsara <supunmax663@gmail.com>
+Date:   Tue Dec 3 10:51:07 2024 -0800
+
+    Task Uploaded system is done
+
+[33mcommit d0d1191a431d59ac42ff90cd6618e56600577cff[m
+Author: Supun Nethsara <supunmax663@gmail.com>
+Date:   Tue Dec 3 04:32:11 2024 -0800
+
+    Admin Task management Component Created
+
+[33mcommit e16a49d1cabeec736c61976fe84d8fb52b8c5e37[m
+Author: Supun Nethsara <supunmax663@gmail.com>
+Date:   Mon Dec 2 12:19:52 2024 -0800
+
+    User status Online offline displying
+
+[33mcommit 5c77081c638a71f565ea842f6e337fd348fb26b8[m
+Author: Supun Nethsara <supunmax663@gmail.com>
+Date:   Mon Dec 2 11:41:24 2024 -0800
+
+     User online status to some extent sucessfull
+
+[33mcommit f4e52f7846078617625e421f1fd7d20205426277[m
+Author: Supun Nethsara <supunmax663@gmail.com>
+Date:   Mon Dec 2 08:28:33 2024 -0800
+
+    user status section created
+
+[33mcommit 4852d2f04aa1ee8f97f98ff71c440530d20ce190[m
+Author: Supun Nethsara <supunmax663@gmail.com>
+Date:   Sun Dec 1 10:03:00 2024 -0800
+
+     Get Student Register data for admin dashboard table
+
+[33mcommit cbce6fd451f36e50acdedb1d6fd4313c0b6082a0[m
+Author: Supun Nethsara <supunmax663@gmail.com>
+Date:   Sun Dec 1 01:22:44 2024 -0800
+
+    Logout is created
+
+[33mcommit 1cc2de197f1c36f2fc3affedcac398b5bc397612[m
+Author: Supun Nethsara <supunmax663@gmail.com>
+Date:   Sat Nov 30 11:22:15 2024 -0800
+
+    Profile section call with backend
+
+[33mcommit d18ec47cdde5136a99dad448923083aa63afe856[m
+Author: Supun Nethsara <supunmax663@gmail.com>
+Date:   Fri Nov 29 03:09:19 2024 -0800
+
+    user email registration added
+
+[33mcommit ba34667fb3959c682e0694afedc94152886f4880[m
+Author: Supun Nethsara <supunmax663@gmail.com>
+Date:   Fri Nov 29 02:30:41 2024 -0800
+
+    user login and set user details for user-profile section
+
+[33mcommit 6fbcdf05cff769493d90ef41b3f5d4ebd761c10d[m
+Author: Supun Nethsara <supunmax663@gmail.com>
+Date:   Thu Nov 28 09:27:18 2024 -0800
+
+    Student registration form created and data submition is ok
+
+[33mcommit 66809338da2218116e1cc15f0437fac9732da3f3[m
+Author: Supun Nethsara <supunmax663@gmail.com>
+Date:   Thu Nov 28 02:53:54 2024 -0800
+
+     Statics boxes and student registration component created
+
+[33mcommit 0327d8ea231caac1d1a0c05ab54c58d7720e2fcc[m
+Author: Supun Nethsara <supunmax663@gmail.com>
+Date:   Wed Nov 27 03:00:06 2024 -0800
+
+    user Dashboard styling
+
+[33mcommit ec09bb10c904b70ceb7b9084dadd4695c3026817[m
+Author: Supun Nethsara <supunmax663@gmail.com>
+Date:   Tue Nov 26 04:01:33 2024 -0800
+
+     student dashboard created and routing dashboard components
+
+[33mcommit f5249aecbfa0997579781e9d73aa107b98fb1761[m
+Merge: 98a33dd 8756ee7
+Author: Supun Nethsara <supunmax663@gmail.com>
+Date:   Mon Nov 25 12:06:21 2024 -0800
+
+    composser/npm install & created loging form and call api end point and naviagted admin and user dashboard'
+
+[33mcommit 98a33dda57a4a8c3740ab72b2feb0228f731e094[m
+Author: Supun Nethsara <supunmax663@gmail.com>
+Date:   Mon Nov 25 11:31:58 2024 -0800
+
+    auth.php/.env/ updated and set navigated admin and dashboard panel by using login form
+
+[33mcommit 8756ee7d6dd6aec1f8f6119123e3f25a6cfdd24e[m
+Author: Supun Nethsara <supunmax663@gmail.com>
+Date:   Mon Nov 25 09:22:33 2024 -0800
+
+    Admin dashboard and student dashboard created
+
+[33mcommit cea204dbccf318c99571e15e12366268121d5976[m
+Author: Supun Nethsara <supunmax663@gmail.com>
+Date:   Sun Nov 24 11:21:13 2024 -0800
+
+    API testing is workingand data passes with backend
+
+[33mcommit f6cb4dd669f35589f7e6ada41aaac2f33f4c33a8[m
+Author: Supun Nethsara <supunmax663@gmail.com>
+Date:   Sun Nov 24 05:41:01 2024 -0800
+
+    login form created
+
+[33mcommit 104f457501458f0ef571d22449b8c24ddd57ecb8[m
+Author: Supun Nethsara <supunmax663@gmail.com>
+Date:   Sun Nov 24 05:37:19 2024 -0800
+
+    Sass install/tailwind install/flowbit i

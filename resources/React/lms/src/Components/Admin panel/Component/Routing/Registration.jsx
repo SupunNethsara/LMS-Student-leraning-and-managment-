@@ -179,7 +179,7 @@ function Registration() {
       )}
 
       <form onSubmit={handleSubmit} className="space-y-6">
-        {/* Personal Information Section */}
+
         <div className="bg-white rounded-lg shadow p-6">
           <h4 className="text-lg font-medium text-gray-700 mb-4">Personal Information</h4>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">

@@ -133,7 +133,7 @@ function Paymenttable() {
                     </thead>
 
                     <tbody>
-                    {paymentdata && paymentdata.map((pay) => (
+                    {paymentdata && paymentdata.map((pay)=>(
                             <tr className="bg-white border-b" >
                                  <td className="w-4 p-4">
                                     <div className="flex items-center">
