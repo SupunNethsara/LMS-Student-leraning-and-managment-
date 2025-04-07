@@ -6,6 +6,7 @@ use App\Http\Requests\LoginRequest;
 use App\Http\Requests\RegisterStudentRequest;
 use App\Models\Account;
 use App\Models\StudentRegister;
+use Illuminate\Auth\Events\Validated;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cache;
@@ -20,7 +21,9 @@ class LoginController extends Controller
    
     public function Registerstudent(RegisterStudentRequest $request)
     {
-        $validatedData = $request->validate([]);
+        $validatedData = $request->validate([
+      
+        ]);
         $profileUrl = null;
         if ($request->hasFile('profile')) {
             try {
@@ -102,9 +105,9 @@ class LoginController extends Controller
  
     public function login(LoginRequest $request)
     {
-        $validatedData = $request->validate([]);
+        $credentials = $request->validated();
     
-        if (Auth::attempt(['email' => $validatedData['email'], 'password' => $validatedData['password']])) {
+        if (Auth::attempt(['email' => $credentials['email'], 'password' => $credentials['password']])) {
             $email = $request->email;
             $user = Auth::user();
          
