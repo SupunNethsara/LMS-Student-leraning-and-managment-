@@ -14,6 +14,7 @@ class TaskController extends Controller
             'projecttitle' => 'required',
             'projectview' => 'required',
             'description' => 'required',
+            'closingdate' => 'required',
         ]);
 
         Taskmanager::create([
@@ -21,15 +22,19 @@ class TaskController extends Controller
             'projecttitle' => $validatedData['projecttitle'],
             'projectview' => $validatedData['projectview'],
             'description' => $validatedData['description'],
+            'closingdate' => $validatedData['closingdate'],
         ]);
 
         return response()->json(['message' => 'User created successfully'], 201);
     }
 
 
-    function getalldataTask(Request $request)
+    public function getalldataTask()
     {
-        $getalltask = Taskmanager::all();
-        return response()->json(['taskdetails' =>  $getalltask]);
+        $tasks = Taskmanager::all();
+        return response()->json([
+            'success' => true,
+            'data' => $tasks
+        ]);
     }
 }
